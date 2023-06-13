@@ -110,11 +110,7 @@ in
   bind=SUPER,backspace,exec,swaylock -S
 
   # Screenshots
-  bind=,Print,exec,grimblast --notify copy output
-  bind=SHIFT,Print,exec,grimblast --notify copy active
-  bind=CONTROL,Print,exec,grimblast --notify copy screen
-  bind=SUPER,Print,exec,grimblast --notify copy window
-  bind=ALT,Print,exec,grimblast --notify copy area
+  bind=,Print,exec,grimblast --notify copy area
 
   # Keyboard controls (brightness, media, sound, etc)
   bind=,XF86MonBrightnessUp,exec,light -A 10

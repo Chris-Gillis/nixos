@@ -24,11 +24,6 @@
     };
   };
   
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-  };
-
   programs.hyprland = {
     enable = true;
     xwayland.enable = false;

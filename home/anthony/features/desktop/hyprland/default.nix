@@ -17,9 +17,13 @@
     fi
   '';
 
-  home.packages = with pkgs; [
-    inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland
-  ];
+  home = {
+    sessionVariables = { XDG_CURRENT_DESKTOP = "Hyprland"; };
+    packages = with pkgs; [
+      inputs.hyprwm-contrib.packages.${system}.grimblast
+      inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland
+    ];
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;
