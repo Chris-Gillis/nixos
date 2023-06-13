@@ -4,6 +4,7 @@
     ./firefox
     ./eww
     ./light.nix
+    ./obsidian.nix
     ./pavucontrol.nix
     ./slack.nix
   ];
