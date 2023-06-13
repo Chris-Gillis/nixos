@@ -10,12 +10,17 @@ in
         bookmarks = [];
         extensions = with addons; [
           ublock-origin
+          bitwarden
+          # onepassword-password-manager  # TODO: Fix this allowUnfree issue
+          tree-style-tab
         ];
         search = {
           default = "DuckDuckGo";
           force = true;
         };
-        settings = { };
+        settings = {
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        };
         userChrome = builtins.readFile ./userChrome.css;
       };
     };
