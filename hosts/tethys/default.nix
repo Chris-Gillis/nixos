@@ -29,11 +29,7 @@
     xwayland.enable = false;
   };
 
-  # TODO: Remove this
   services = {
-    # TODO: Remove SSH
-    openssh.enable = true;
-
     kmonad = {
       enable = true;
       keyboards = {
