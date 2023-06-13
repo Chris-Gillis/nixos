@@ -31,17 +31,24 @@
   let
     inherit (self) outputs;
 
+    forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
+    forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
+
     system = "x86_64-linux";
     unstable = import nixpkgs-unstable { inherit system; };
+
+    overlays = {
+      rust-overlay = rust-overlay.overlays.default;
+      nur = inputs.nur.overlay;
+      personal = import pkgs/overlay.nix;
+    };
 
     mkNixos = modules: nixpkgs.lib.nixosSystem {
       inherit system;
 
       modules = modules ++ [
         ({ pkgs, ... }: {
-          nixpkgs.overlays = [
-            rust-overlay.overlays.default
-          ];
+          nixpkgs.overlays = builtins.attrValues overlays;
         })
       ];
       specialArgs = { inherit inputs outputs unstable; };
@@ -49,6 +56,8 @@
   in
   {
     nixosModules = import ./modules/nixos;
+
+    packages = forEachPkgs (pkgs: (import ./pkgs { inherit pkgs; }));
 
     nixosConfigurations = {
       tethys = mkNixos [ ./hosts/tethys ];

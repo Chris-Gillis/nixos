@@ -23,7 +23,7 @@
       $color-cyan: #${theme.colors.cyan};
       $color-white: #${theme.colors.white};
 
-      $font-1: MesloLGS Nerd Font;
+      $font-1: Iosevka Nerd Font, MesloLGS Nerd Font;
       $font-2: Font Awesome 6 Free Regular;
 
       ${lib.strings.fileContents ./config/eww.scss}

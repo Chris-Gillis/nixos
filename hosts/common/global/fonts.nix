@@ -7,5 +7,9 @@
     fira-code-symbols
     nerdfonts
     font-awesome
+
+    # Custom fonts (see /pkgs/)
+    koulen
+    phosphor-icons
   ];
 }
