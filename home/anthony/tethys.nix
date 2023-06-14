@@ -11,7 +11,7 @@ in
     ./features/desktop/wireless
   ];
 
-  wallpaper = wallpapers.test-wallpaper;
+  wallpaper = wallpapers.planet-vector-art;
   primaryNetworkInterface = "wlp0s20f3";
 
   monitors = [
