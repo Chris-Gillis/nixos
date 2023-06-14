@@ -1,2 +1,3 @@
 {
+  qtgreet = import ./qtgreet.nix;
 }
