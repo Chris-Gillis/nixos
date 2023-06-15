@@ -17,7 +17,7 @@ in
       general = ''
         layout=master
       '';
-      keybinds = ''
+      bindings = ''
         bind=SUPERSHIFT,t,layoutmsg,swapwithmaster auto
         bind=SUPER,t,layoutmsg,focusmaster auto
       '';

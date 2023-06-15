@@ -14,7 +14,7 @@ in
                     general = mkOption {
                       type = types.lines;
                     };
-                    keybinds = mkOption {
+                    bindings = mkOption {
                       type = types.lines;
                     };
                   };
@@ -22,6 +22,16 @@ in
               };
             };
           };
+        };
+      };
+    };
+    default = {
+      hyprland = {
+        ext = {
+          general = ''
+            layout=dwindle
+          '';
+          bindings = "";
         };
       };
     };

@@ -13,14 +13,6 @@ in
   wallpaper = wallpapers.planet-vector-art;
   primaryNetworkInterface = "wlp0s20f3";
 
-  host-specific = {
-    hyprland.ext = {
-      general = ''
-        layout=dwindle
-      '';
-    };
-  };
-
   monitors = [
     {
       name = "eDP-1";

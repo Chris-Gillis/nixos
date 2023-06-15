@@ -226,6 +226,6 @@ in
   bind=SUPERSHIFT,f11,movetoworkspacesilent,21
   bind=SUPERSHIFT,f12,movetoworkspacesilent,22
 
-  ${ext.keybinds}
+  ${ext.bindings}
 ''
 

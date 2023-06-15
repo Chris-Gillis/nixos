@@ -1,4 +1,7 @@
 { pkgs, lib, config, ... }:
+let
+  host = config.networking.hostName;
+in
 {
   programs.zsh = {
     enable = true;
