@@ -6,13 +6,20 @@ in
     ./global
 
     ./features/desktop/common
-    # ./features/desktop/sway
     ./features/desktop/hyprland
     ./features/desktop/wireless
   ];
 
   wallpaper = wallpapers.planet-vector-art;
   primaryNetworkInterface = "wlp0s20f3";
+
+  host-specific = {
+    hyprland.ext = {
+      general = ''
+        layout=dwindle
+      '';
+    };
+  };
 
   monitors = [
     {

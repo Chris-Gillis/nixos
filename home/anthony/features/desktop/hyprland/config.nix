@@ -1,7 +1,8 @@
-{ home, wallpaper, theme }:
+{ home, wallpaper, theme, host-specific }:
 let
   inherit (home.sessionVariables) TERMINAL BROWSER EDITOR;
   inherit (theme) colors;
+  ext = host-specific.hyprland.ext;
 in
 ''
   $inactive_border=0xff${colors.inactive}
@@ -12,7 +13,7 @@ in
   $shadow_inactive=0x66000000
 
   general {
-    layout=master
+    ${ext.general}
     gaps_in=10
     gaps_out=10
     border_size=3
@@ -64,6 +65,10 @@ in
     animation=border,1,3,easeout
 
     animation=workspaces,1,2,overshot,slide
+  }
+
+  dwindle {
+    split_width_multiplier=1.35
   }
 
   master {
@@ -175,9 +180,6 @@ in
   bind=SUPER,u,togglespecialworkspace
   bind=SUPERSHIFT,u,movetoworkspace,special
 
-  bind=SUPERSHIFT,t,layoutmsg,swapwithmaster auto
-  bind=SUPER,t,layoutmsg,focusmaster auto
-
   bind=SUPER,1,workspace,01
   bind=SUPER,2,workspace,02
   bind=SUPER,3,workspace,03
@@ -223,5 +225,7 @@ in
   bind=SUPERSHIFT,f10,movetoworkspacesilent,20
   bind=SUPERSHIFT,f11,movetoworkspacesilent,21
   bind=SUPERSHIFT,f12,movetoworkspacesilent,22
+
+  ${ext.keybinds}
 ''
 

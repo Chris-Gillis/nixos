@@ -12,6 +12,18 @@ in
   wallpaper = wallpapers.space-colonization;
   primaryNetworkInterface = "enp7s0";
 
+  host-specific = {
+    hyprland.ext = {
+      general = ''
+        layout=master
+      '';
+      keybinds = ''
+        bind=SUPERSHIFT,t,layoutmsg,swapwithmaster auto
+        bind=SUPER,t,layoutmsg,focusmaster auto
+      '';
+    };
+  };
+
   monitors = [
     {
       name = "DP-2";
