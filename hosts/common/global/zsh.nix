@@ -8,7 +8,7 @@ in
     shellAliases = {
       nrs = "doas nixos-rebuild switch --flake ~/source/nix#${host}";
       nrt = "doas nixos-rebuild test --flake ~/source/nix#${host}";
-      ncg = "doas nixos-collect-garbage";
+      ncg = "doas nixos-collect-garbage --delete-older-than 1d";
     };
   };
 }
