@@ -18,8 +18,8 @@ in
         layout=master
       '';
       bindings = ''
-        bind=SUPERSHIFT,t,layoutmsg,swapwithmaster auto
-        bind=SUPER,t,layoutmsg,focusmaster auto
+        bind=SUPER,t,layoutmsg,swapwithmaster auto
+        bind=SUPERSHIFT,t,layoutmsg,focusmaster auto
       '';
     };
   };

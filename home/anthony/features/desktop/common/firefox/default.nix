@@ -1,13 +1,14 @@
 { pkgs, inputs, ... }:
 let
   addons = inputs.firefox-addons.packages.${pkgs.system};
+  bookmarks = import ./bookmarks.nix;
 in
 {
   programs.firefox = {
     enable = true;
     profiles = {
       primary = {
-        bookmarks = [];
+        bookmarks = bookmarks;
         extensions = with addons; [
           ublock-origin
           bitwarden
