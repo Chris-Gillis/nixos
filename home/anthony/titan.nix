@@ -9,12 +9,12 @@ in
     ./features/desktop/hyprland
   ];
 
-  wallpaper = wallpapers.test-wallpaper;
+  wallpaper = wallpapers.space-colonization;
   primaryNetworkInterface = "enp7s0";
 
   monitors = [
     {
-      name = "DP-1";
+      name = "DP-2";
       width = 5120;
       height = 1440;
       refreshRate = 120;

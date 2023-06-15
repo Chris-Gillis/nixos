@@ -12,6 +12,7 @@ in
   $shadow_inactive=0x66000000
 
   general {
+    layout=master
     gaps_in=10
     gaps_out=10
     border_size=3
@@ -65,8 +66,10 @@ in
     animation=workspaces,1,2,overshot,slide
   }
 
-  dwindle {
-    split_width_multiplier=1.35
+  master {
+    new_is_master=false
+    orientation=center
+    always_center_master=true
   }
 
   misc {
@@ -171,6 +174,9 @@ in
 
   bind=SUPER,u,togglespecialworkspace
   bind=SUPERSHIFT,u,movetoworkspace,special
+
+  bind=SUPERSHIFT,t,layoutmsg,swapwithmaster auto
+  bind=SUPER,t,layoutmsg,focusmaster auto
 
   bind=SUPER,1,workspace,01
   bind=SUPER,2,workspace,02
