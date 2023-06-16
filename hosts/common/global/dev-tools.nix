@@ -16,7 +16,6 @@
     rust-bin.stable.latest.default
 
     # Misc Libs & Utils
-    direnv
     zip
     unzip
   ];

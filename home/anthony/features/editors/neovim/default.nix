@@ -1,7 +1,7 @@
-{ pkgs, config, unstable, lib, vimUtils, ... }:
+{ pkgs, config, unstable, lib, ... }:
 let
   # Installs a vim plugin from git
-  pluginGit = ref: repo: vimUtils.buildVimPluginFrom2Nix {
+  pluginGit = ref: repo: pkgs.vimUtils.buildVimPluginFrom2Nix {
     pname = "${lib.strings.sanitizeDerivationName repo}";
     version = ref;
     src = builtins.fetchGit {
@@ -21,6 +21,8 @@ in
     package = unstable.neovim-unwrapped;
     extraConfig = ''
       luafile ~/.config/nvim/init.lua
+      let g:codeium_no_map_tab = true
+      imap <silent><script><expr><nowait> <C-v> codeium#Accept()
     '';
 
     extraPackages = with pkgs; [
@@ -29,6 +31,10 @@ in
       nodejs
       ruby
       gnumake
+    ];
+
+    plugins = with pkgs.vimPlugins; [
+      codeium-vim
     ];
   };
 

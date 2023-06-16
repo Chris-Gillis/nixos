@@ -19,8 +19,8 @@ in
     borderRadius = 5;
     borderSize = 0;
 
-    extraConfig = ''
-
-    '';
+    # extraConfig = ''
+    #
+    # '';
   };
 }
