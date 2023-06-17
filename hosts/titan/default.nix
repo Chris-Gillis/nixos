@@ -12,6 +12,7 @@
     ../common/optional/quiet-boot.nix
     ../common/optional/qtgreet.nix
     ../common/optional/flatpak.nix
+    ../common/optional/gamemode.nix
   ];
 
   networking = {
@@ -46,6 +47,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-
 }
 
