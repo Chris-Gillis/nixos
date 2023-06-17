@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    ./bottles.nix
     ./discord.nix
     ./firefox
     ./eww
