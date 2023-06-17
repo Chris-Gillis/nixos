@@ -1,5 +1,10 @@
 #!/bin/sh
 
+run_launcher()
+{
+  wofi
+}
+
 run_battery()
 {
   battery=`cat /sys/class/power_supply/BAT0/capacity`
@@ -134,6 +139,8 @@ elif [[ "$SCRIPT" == "volume" ]]; then
   run_volume $@
 elif [[ "$SCRIPT" == "workspaces" ]]; then
   run_workspaces $@
+elif [[ "$SCRIPT" == "launcher" ]]; then
+  run_launcher $@
 else
   echo "Please select a script to run!"
   exit 1

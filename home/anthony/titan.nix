@@ -12,16 +12,14 @@ in
   wallpaper = wallpapers.space-colonization;
   primaryNetworkInterface = "enp7s0";
 
-  host-specific = {
-    hyprland.ext = {
-      general = ''
-        layout=master
-      '';
-      bindings = ''
-        bind=SUPER,t,layoutmsg,swapwithmaster auto
-        bind=SUPERSHIFT,t,layoutmsg,focusmaster auto
-      '';
-    };
+  hyprland = {
+    general = ''
+      layout=master
+    '';
+    bindings = ''
+      bind=SUPER,t,layoutmsg,swapwithmaster auto
+      bind=SUPERSHIFT,t,layoutmsg,focusmaster auto
+    '';
   };
 
   monitors = [

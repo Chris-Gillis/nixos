@@ -32,7 +32,7 @@
       theme = import ../../../theme;
     in
       (import ./config.nix {
-        inherit (config) home wallpaper host-specific;
+        inherit (config) home wallpaper hyprland;
         theme = theme;
       }) +
       (import ./monitors.nix {

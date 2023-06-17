@@ -23,13 +23,18 @@
       $color-cyan: #${theme.colors.cyan};
       $color-white: #${theme.colors.white};
 
-      $font-1: Iosevka Nerd Font, MesloLGS Nerd Font;
+      $font-0: Koulen;
+      $font-1: Iosevka Nerd Font Mono, MesloLGS Nerd Font Mono;
       $font-2: Font Awesome 6 Free Regular;
+
+      $border-radius: 8px;
 
       ${lib.strings.fileContents ./config/eww.scss}
     '';
 
     "eww/eww.yuck".text = ''
+      (defvar SHOW_BATTERY ${lib.trivial.boolToString config.eww.showBattery})
+
       ${lib.strings.fileContents ./config/eww.yuck} 
     '';
 

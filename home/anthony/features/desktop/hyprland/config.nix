@@ -1,8 +1,7 @@
-{ home, wallpaper, theme, host-specific }:
+{ home, wallpaper, theme, hyprland }:
 let
   inherit (home.sessionVariables) TERMINAL BROWSER EDITOR;
   inherit (theme) colors;
-  ext = host-specific.hyprland.ext;
 in
 ''
   $inactive_border=0xff${colors.inactive}
@@ -13,7 +12,7 @@ in
   $shadow_inactive=0x66000000
 
   general {
-    ${ext.general}
+    ${hyprland.general}
     gaps_in=10
     gaps_out=10
     border_size=3
@@ -108,7 +107,7 @@ in
   bind=SUPER,d,exec,wofi -S run
 
   # Clipboard management
-  exec-once = wl-paste --type text --watch cliphist store #Stores only text data
+  exec-once = wl-paste --type thyprland --watch cliphist store #Stores only text data
   exec-once = wl-paste --type image --watch cliphist store #Stores only image data
   bind = SUPER, V, exec, cliphist list | wofi -dmenu | cliphist decode | wl-copy
 
@@ -124,11 +123,11 @@ in
   bind=,XF86MonBrightnessUp,exec,light -A 10
   bind=,XF86MonBrightnessDown,exec,light -U 10
 
-  bind=,XF86AudioNext,exec,playerctl next
+  bind=,XF86AudioNhyprland,exec,playerctl next
   bind=,XF86AudioPrev,exec,playerctl previous
   bind=,XF86AudioPlay,exec,playerctl play-pause
   bind=,XF86AudioStop,exec,playerctl stop
-  bind=ALT,XF86AudioNext,exec,playerctld shift
+  bind=ALT,XF86AudioNhyprland,exec,playerctld shift
   bind=ALT,XF86AudioPrev,exec,playerctld unshift
   bind=ALT,XF86AudioPlay,exec,systemctl --user restart playerctld
 
@@ -226,6 +225,6 @@ in
   bind=SUPERSHIFT,f11,movetoworkspacesilent,21
   bind=SUPERSHIFT,f12,movetoworkspacesilent,22
 
-  ${ext.bindings}
+  ${hyprland.bindings}
 ''
 
