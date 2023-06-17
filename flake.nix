@@ -25,9 +25,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-gaming.url = "github:fufexan/nix-gaming";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, rust-overlay, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, rust-overlay, nix-gaming, ... }@inputs:
   let
     inherit (self) outputs;
 
@@ -51,7 +52,7 @@
           nixpkgs.overlays = builtins.attrValues overlays;
         })
       ];
-      specialArgs = { inherit inputs outputs unstable; };
+      specialArgs = { inherit inputs outputs unstable nix-gaming; };
     };
   in
   {

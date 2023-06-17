@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   programs.gamemode = {
     enable = true;
     settings = {
@@ -13,6 +13,10 @@
       };
     };
   };
+
+  environment.systemPackages = [
+    pkgs.vulkan-tools
+  ];
 
   security.pam.loginLimits = [
     {
