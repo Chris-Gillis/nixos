@@ -1,4 +1,10 @@
-{ inputs, lib, pkgs, config, outputs, ... }: {
+{ inputs, lib, pkgs, config, outputs, ... }: 
+let
+  overlays = {
+    personal = import ../../../pkgs/overlay.nix;
+  };
+in
+{
   imports = [
     ./modules
     ../features/editors/neovim
@@ -10,6 +16,7 @@
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
     };
+    overlays = builtins.attrValues overlays;
   };
 
   nix = {
