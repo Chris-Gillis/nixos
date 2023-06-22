@@ -20,6 +20,7 @@ in{
   # Syntax Highlighting / Language Support
   treesitter = import ./nvim-treesitter.nix { inherit pkgs lib; };
   lsp = import ./lsp.nix { inherit pkgs lib; };
+  rust-tools = import ./rust-tools.nix { inherit pkgs lib; };
 
   # Code Completion
   nvim-cmp = import ./nvim-cmp.nix { inherit pkgs lib; };
