@@ -16,5 +16,6 @@
 
   home.packages = with pkgs; [
     beekeeper-studio
+    remmina
   ];
 }
