@@ -36,5 +36,9 @@ in{
   comment = import ./comment.nix { inherit pkgs lib; };
   indent-blankline = import ./indent-blankline.nix { inherit pkgs lib; };
   nvim-autopairs = import ./nvim-autopairs.nix { inherit pkgs lib; };
+  nvim-lastplace = import ./nvim-lastplace.nix { inherit pkgs lib; };
+  nvim-ts-autotag = import ./nvim-ts-autotag.nix { inherit pkgs lib; };
+  spelunker = import ./spelunker.nix { inherit pkgs lib; };
   telescope = import ./telescope.nix { inherit pkgs lib; };
+  trouble = import ./trouble.nix { inherit pkgs lib; };
 }
