@@ -28,6 +28,10 @@ in{
   cmp-buffer = import ./cmp-buffer.nix { inherit pkgs lib; };
   cmp-path = import ./cmp-path.nix { inherit pkgs lib; };
 
+  # Status Line + Tab/Buffer Line
+  lualine = import ./lualine.nix { inherit pkgs lib; };
+  barbar = import ./barbar.nix { inherit pkgs lib; };
+
   # Utilities
   comment = import ./comment.nix { inherit pkgs lib; };
   indent-blankline = import ./indent-blankline.nix { inherit pkgs lib; };
