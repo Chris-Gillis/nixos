@@ -13,6 +13,7 @@ in
       # Language servers
       nodePackages.bash-language-server
       nodePackages.vscode-langservers-extracted
+      nodePackages.eslint
       docker-compose-language-service
       nodePackages.dockerfile-language-server-nodejs
       lua-language-server
