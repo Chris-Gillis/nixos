@@ -9,6 +9,7 @@
   ];
 
   home.packages = with pkgs; [
+    btop
     exa
     ripgrep
     fd
