@@ -23,6 +23,9 @@
       $color-cyan: #${theme.colors.cyan};
       $color-white: #${theme.colors.white};
 
+      $color-warning: #${theme.colors.warning};
+      $color-critical: #${theme.colors.error};
+
       $font-0: Koulen;
       $font-1: Iosevka Nerd Font Mono, MesloLGS Nerd Font Mono;
       $font-2: Font Awesome 6 Free Regular;

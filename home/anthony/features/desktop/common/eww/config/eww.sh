@@ -89,7 +89,7 @@ run_volume()
   fi
 }
 
-run_workspaces()
+run_workspaces_old()
 {
   get_workspaces() {
     workspaces=($(swaymsg -t get_workspaces | jq -r -c '.[] | { "name": .name, "focused": .focused, "urgent": .urgent }'))
@@ -124,6 +124,10 @@ run_workspaces()
   swaymsg -t subscribe -m '[ "workspace" ]' | while read -r _ ; do
     get_workspaces
   done
+}
+
+run_workspaces() {
+  echo "{\"workspaces\":[]}"
 }
 
 SCRIPT="$1"

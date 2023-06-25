@@ -159,27 +159,38 @@ scale trough {
 }
 
 .battery {
-  margin: 0 0.5rem;
-  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
   border-radius: $border-radius;
+  transition: 150ms linear background-color;
 
-  .critical {
-    background-color: $color-red;
+  &.active {
+    background-color: $color-cyan;
   }
 
-  .warning {
-    background-color: $color-yellow;
+  &.critical {
+    animation-name: critical-blink;
+    animation-direction: alternate;
+    animation-duration: 300ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
   }
 
-  .icon-battery {
-    margin-right: 0.3rem;
+  &.warning {
+    animation-name: warning-blink;
+    animation-direction: alternate;
+    animation-duration: 600ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
   }
 
   .icon-adapter {
+    margin-top: -0.2rem;
     font-size: 0;
 
     &.connected {
-      font-size: 1rem;
+      font-size: 1.5rem;
     }
   }
 }
@@ -226,7 +237,7 @@ scale trough {
 
 .icon-battery, .icon-adapter {
     font-family: $font-1;
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 
 .btn-workspace {
@@ -260,4 +271,22 @@ scale trough {
             background-color: $color-red;
         }
     }
+}
+
+@keyframes warning-blink {
+  0% {
+    background-color: $color-background;
+  }
+  100% {
+    background-color: $color-warning;
+  }
+}
+
+@keyframes critical-blink {
+  0% {
+    background-color: $color-background;
+  }
+  100% {
+    background-color: $color-critical;
+  }
 }

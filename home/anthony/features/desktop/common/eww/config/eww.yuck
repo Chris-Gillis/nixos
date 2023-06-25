@@ -33,7 +33,7 @@
   (_clock)
   (_network)
   (_volume)
-  (literal :content { SHOW_BATTERY ? '_battery' : '' } )
+  (literal :content { SHOW_BATTERY ? '(_battery)' : '' } )
   (_power)
  )
 )
@@ -161,16 +161,19 @@
 
 ;; Battery
 (defwidget _battery []
- (box :class 'battery ${CHARGE < 10 ? 'critical' : CHARGE < 20 ? 'warning' : ''}' :space-evenly false
+ (eventbox :onhover '${EWW_CMD} update BATTERY=true'
+           :onhoverlost '${EWW_CMD} update BATTERY=false'
+ (box :class 'battery ${BATTERY ? 'active' : ''} ${CHARGE < 10 ? 'critical' : CHARGE < 20 ? 'warning' : ''}' :space-evenly false :orientation 'v'
   :tooltip 'Charge: ${CHARGE}%${ADAPTER > 0 ? ' | Charging' : ''}'
   (label :class 'icon-battery'
-   :text '${CHARGE < 20 ? '󰁺' : CHARGE < 40 ? '󰁼' : CHARGE < 60 ? '󰁾' : CHARGE < 80 ? '󰂀' : CHARGE < 99 ? '󰂂' : '󰁹'}'
+   :text '${CHARGE < 10 ? '' : CHARGE < 30 ? '' : CHARGE < 60 ? '' : CHARGE < 80 ? '' : '󰁹'}'
   )
-  (label :class 'icon-adapter ${ADAPTER > 0 ? 'connected' : ''}' :text '󰚥')
- )
+  (label :class 'icon-adapter ${ADAPTER > 0 ? 'connected' : ''}' :text 'AC')
+ ))
 )
 (defpoll CHARGE :interval '5s' `./eww.sh battery charge`)
 (defpoll ADAPTER :interval '5s' `./eww.sh battery ac`)
+(defvar BATTERY false)
 
 ;; Power Menu
 (defwidget _power []

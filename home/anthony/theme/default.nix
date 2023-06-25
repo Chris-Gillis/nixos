@@ -27,6 +27,9 @@
     inactive = gray;
     inactive-alt = gray-alt;
 
+    warning = yellow;
+    error = red;
+
     window-manager = {
       focused = focused;
     };
