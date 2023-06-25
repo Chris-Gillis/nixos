@@ -1,17 +1,18 @@
-{ ... }: 
+{ pkgs, ... }: 
 let
   theme = import ../../../../theme;
 in
 {
+  home.packages = [ pkgs.libnotify ];
   services.mako = {
     enable = true;
-    actions = true;
+    # actions = true;
     anchor = "top-center";
-    defaultTimeout = 15;
+    # defaultTimeout = 15;
 
     # Formatting
-    backgroundColor = theme.colors.notifications.background;
-    textColor = theme.colors.notifications.foreground;
+    backgroundColor = "#${theme.colors.notifications.background}DF";
+    textColor = "#${theme.colors.notifications.foreground}FF";
     margin = "10";
 
     # Border
