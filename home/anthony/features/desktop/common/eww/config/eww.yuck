@@ -163,7 +163,7 @@
 (defwidget _battery []
  (eventbox :onhover '${EWW_CMD} update BATTERY=true'
            :onhoverlost '${EWW_CMD} update BATTERY=false'
- (box :class 'battery ${BATTERY ? 'active' : ''} ${CHARGE < 10 ? 'critical' : CHARGE < 20 ? 'warning' : ''}' :space-evenly false :orientation 'v'
+ (box :class 'battery ${BATTERY ? 'active' : ''} ${ADAPTER > 0 ? '' : CHARGE < 10 ? 'critical' : CHARGE < 20 ? 'warning' : ''}' :space-evenly false :orientation 'v'
   :tooltip 'Charge: ${CHARGE}%${ADAPTER > 0 ? ' | Charging' : ''}'
   (label :class 'icon-battery'
    :text '${CHARGE < 10 ? '' : CHARGE < 30 ? '' : CHARGE < 60 ? '' : CHARGE < 80 ? '' : '󰁹'}'
