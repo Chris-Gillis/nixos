@@ -3,24 +3,29 @@
     true-white = "FFFFFF";  #FFFFFF
     true-black = "000000";  #000000
 
-    black = "665C54";  #665C54
+    black = "4c4f69";  #665C54
     black-alt = "282828";  #282828
-    white = "DFBF8E";  #DFBF8E
+    white = "ccd0da";  #DFBF8E
     gray = "778691";  #778691
     gray-alt = "AFB7BD";  #AFB7BD
     blue = "2C93D4";  #2C93D4
     blue-alt = "69AFDB";  #69AFDB
-    red = "EA6962";  #EA6962
-    green = "A9B665";  #A9B665
-    yellow = "E78A4E";  #E78A4E
+    red = "e64553";  #EA6962
+    red-alt = "d20f39";
+    green = "40a02b";  #A9B665
+    yellow = "df8e1d";  #E78A4E
     magenta = "D3869B";  #D3869B
-    cyan = "89B482";  #89B482
-    cyan-alt = "7DAEA3";  #7DAEA3
+    cyan = "209fb5";  #89B482
+    cyan-alt = "04a5e5";  #7DAEA3
+    rose = "dc8a78";
+    lavender = "7287fd";
+    flamingo = "dd7878";
+    sapphire = "209fb5";
 
 
     # Symbolic names
-    foreground = white;
-    background = black-alt;
+    foreground = black;
+    background = white;
 
     focused = blue;
     focused-alt = blue-alt;
@@ -28,7 +33,7 @@
     inactive-alt = gray-alt;
 
     warning = yellow;
-    error = red;
+    error = red-alt;
 
     window-manager = {
       focused = focused;
@@ -37,6 +42,22 @@
     notifications = {
       background = true-white;
       foreground = gray;
+    };
+
+    bar = {
+      background = white;
+      foreground = black;
+
+      warning = yellow;
+      critical = red-alt;
+
+      launcher = cyan-alt;
+      workspace = cyan;
+      datetime = lavender;
+      network = flamingo;
+      sound = sapphire;
+      battery = green;
+      power = red;
     };
   };
 }

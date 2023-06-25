@@ -36,7 +36,7 @@ scale trough {
     transition: 150ms linear background-color;
 
     &:hover {
-      background-color: $color-blue;
+      background-color: $color-launcher;
     }
   }
 }
@@ -48,16 +48,16 @@ scale trough {
     .btn-workspace {
         padding: 0 0.5rem;
         &.focused {
-            color: $color-cyan;
+            color: $color-workspace;
         }
 
         &.urgent {
-            background-color: $color-red;
+            background-color: $color-critical;
         }
     }
 
     &.active {
-        border: 2px solid $color-cyan;
+        border: 2px solid $color-workspace;
     }
 }
 
@@ -71,11 +71,11 @@ scale trough {
     }
 
     &.active {
-        border: 2px solid $color-cyan;
+        border: 2px solid $color-datetime;
 
         .icon-clock {
             color: $color-background;
-            background-color: $color-cyan;
+            background-color: $color-datetime;
         }
     }
 
@@ -110,10 +110,10 @@ scale trough {
     }
 
     &.active {
-        border: 2px solid $color-magenta;
+        border: 2px solid $color-network;
         .icon-network {
             color: $color-background;
-            background-color: $color-magenta;
+            background-color: $color-network;
         }
     }
 
@@ -141,10 +141,10 @@ scale trough {
     }
 
     &.active {
-        border: 2px solid $color-green;
+        border: 2px solid $color-sound;
         .icon-volume {
             color: $color-background;
-            background-color: $color-green;
+            background-color: $color-sound;
             transition: 100ms linear color;
 
             &:hover {
@@ -164,7 +164,7 @@ scale trough {
   transition: 150ms linear background-color;
 
   &.active {
-    background-color: $color-cyan;
+    background-color: $color-battery;
   }
 
   &.critical {
@@ -204,10 +204,10 @@ scale trough {
     }
 
     &.active {
-        border: 2px solid $color-red;
+        border: 2px solid $color-power;
         .btn-shutdown {
             color: $color-background;
-            background-color: $color-red;
+            background-color: $color-power;
             transition: 100ms linear color;
 
             &:hover {
@@ -220,7 +220,7 @@ scale trough {
         transition: 100ms linear color;
 
         &:hover {
-            color: $color-red;
+            color: $color-power;
         }
     }
 }
@@ -258,17 +258,17 @@ scale trough {
 
     &.green {
         scale trough highlight {
-            background-color: $color-green;
+            background-color: $color-sound;
         }
     }
     &.yellow {
         scale trough highlight {
-            background-color: $color-yellow;
+            background-color: $color-warning;
         }
     }
     &.red {
         scale trough highlight {
-            background-color: $color-red;
+            background-color: $color-critical;
         }
     }
 }

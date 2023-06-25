@@ -12,16 +12,15 @@
     "eww/eww.scss".text = let
       theme = import ../../../../theme;
     in ''
-      $color-foreground: #${theme.colors.foreground};
-      $color-background: #${theme.colors.background};
-      $color-black: #${theme.colors.black};
-      $color-red: #${theme.colors.red};
-      $color-green: #${theme.colors.green};
-      $color-yellow: #${theme.colors.yellow};
-      $color-blue: #${theme.colors.cyan-alt};
-      $color-magenta: #${theme.colors.magenta};
-      $color-cyan: #${theme.colors.cyan};
-      $color-white: #${theme.colors.white};
+      $color-foreground: #${theme.colors.bar.foreground};
+      $color-background: #${theme.colors.bar.background};
+      $color-launcher: #${theme.colors.bar.launcher};
+      $color-workspace: #${theme.colors.bar.workspace};
+      $color-datetime: #${theme.colors.bar.datetime};
+      $color-network: #${theme.colors.bar.network};
+      $color-sound: #${theme.colors.bar.sound};
+      $color-battery: #${theme.colors.bar.battery};
+      $color-power: #${theme.colors.bar.power};
 
       $color-warning: #${theme.colors.warning};
       $color-critical: #${theme.colors.error};
