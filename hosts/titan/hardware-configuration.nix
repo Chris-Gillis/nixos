@@ -33,6 +33,11 @@
       fsType = "vfat";
     };
 
+  fileSystems."/nfs/share" =
+    { device = "hashbrown.utthome.local:/storage/share";
+      fsType = "nfs";
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/98248e91-539b-4774-a0de-25e6b1a97c85"; }
     ];
