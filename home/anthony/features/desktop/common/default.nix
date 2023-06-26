@@ -11,6 +11,7 @@
     ./pavucontrol.nix
     ./slack.nix
     ./spotify.nix
+    ./vivaldi
   ];
 
   xdg.mimeApps.enable = true;
