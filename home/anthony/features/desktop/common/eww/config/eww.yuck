@@ -77,11 +77,11 @@
     (box :class 'network-stats' :orientation 'v' :space-evenly false
      (box :class 'network-stats__down' :orientation 'v'
       (label :class 'icon-stats__down' :text '')
-      (label :class 'stats__down' :text '${EWW_NET[NETWORK_INTERFACE].NET_DOWN}')
+      (label :class 'stats__down' :text '${network.down}')
      )
      (box :class 'network-stats__up' :orientation 'v'
       (label :class 'icon-stats__up' :text '')
-      (label :class 'stats__up' :text '${EWW_NET[NETWORK_INTERFACE].NET_UP}')
+      (label :class 'stats__up' :text '${network.up}')
      )
     )
    )
@@ -90,7 +90,7 @@
 )
 (defvar NETWORK false)
 (defpoll network :interval '1s'
- :initial `./eww.sh network`
+ :initial "{ up: \"TE\", down: \"ST\"}"
  `./eww.sh network`)
 
 ;; Volume
