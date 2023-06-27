@@ -36,6 +36,7 @@
 
     "eww/eww.yuck".text = ''
       (defvar SHOW_BATTERY ${lib.trivial.boolToString config.eww.showBattery})
+      (defvar NETWORK_INTERFACE "${config.primaryNetworkInterface}")
 
       ${lib.strings.fileContents ./config/eww.yuck} 
     '';
