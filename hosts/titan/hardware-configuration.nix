@@ -11,7 +11,7 @@
   boot = {
     initrd = {
       availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-      kernelModules = [ ];
+      kernelModules = [ "amdgpu" ];
     };
     kernelModules = [ "kvm-amd" "amdgpu" ];
     extraModulePackages = [ ];
@@ -49,8 +49,13 @@
   hardware.opengl = {
     driSupport = true;
     driSupport32Bit = true;
-    extraPackages = [ pkgs.amdvlk ];
-    extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+    # extraPackages = [ pkgs.amdvlk ];
+    # extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
   };
   environment.variables.AMD_VULKAN_ICD = "RADV";
+  #
+  # services.xserver = {
+  #   enable = true;
+  #   videoDriver = "amdgpu";
+  # };
 }

@@ -7,6 +7,8 @@ in
 
     ./features/desktop/common
     ./features/desktop/hyprland
+
+    ./features/games/lutris.nix
   ];
 
   wallpaper = wallpapers.space-colonization;
