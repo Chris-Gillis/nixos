@@ -15,8 +15,10 @@ in
   programs.kitty = {
     enable = true;
     font = {
-      name = "FiraCode Nerd Font";
-      size = 11;
+      # https://www.programmingfonts.org/
+      # name = "FiraCode Nerd Font";
+      name = "ComicShannsMono Nerd Font";
+      size = 12;
     };
     settings = {
       scrollback_lines = 4000;
