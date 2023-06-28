@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   home.packages = [
-    (pkgs.lutris.override {
+    (pkgs.bottles.override {
       extraLibraries = pkgs: with pkgs; [
         giflib 
         libpng
@@ -24,10 +24,6 @@
         gtk3
         jansson
         vulkan-loader
-        winePackages.stagingFull
-      ];
-      extraPkgs = pkgs: [
-
       ];
     })
   ];

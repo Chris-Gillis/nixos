@@ -9,6 +9,7 @@ in
     ./features/desktop/hyprland
 
     ./features/games/lutris.nix
+    ./features/games/bottles.nix
   ];
 
   wallpaper = wallpapers.space-colonization;

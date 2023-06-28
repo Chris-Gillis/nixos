@@ -13,7 +13,6 @@
     ../common/optional/qtgreet.nix
     ../common/optional/flatpak.nix
     ../common/optional/gamemode.nix
-    ../common/optional/wine.nix
   ];
 
   networking = {
