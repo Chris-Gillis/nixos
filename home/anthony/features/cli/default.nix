@@ -14,5 +14,6 @@
     ripgrep
     fd
     jq
+    yarn
   ];
 }
