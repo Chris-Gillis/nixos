@@ -35,6 +35,7 @@ in{
 
   # Utilities
   comment = import ./comment.nix { inherit pkgs lib; };
+  flash = import ./flash.nix { inherit pkgs lib; };
   indent-blankline = import ./indent-blankline.nix { inherit pkgs lib; };
   gitsigns = import ./gitsigns.nix { inherit pkgs lib; };
   nvim-autopairs = import ./nvim-autopairs.nix { inherit pkgs lib; };
