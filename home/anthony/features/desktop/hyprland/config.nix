@@ -96,6 +96,8 @@ in
   exec-once=mako
   exec=swaybg -i ${wallpaper} --mode fill
 
+  ${hyprland.startup}
+
   # Mouse binding
   bindm=SUPER,mouse:272,movewindow
   bindm=SUPER,mouse:273,resizewindow

@@ -11,6 +11,9 @@ in
         bindings = mkOption {
           type = types.lines;
         };
+        startup = mkOption {
+          type = types.lines;
+        };
       };
     };
     default = {
@@ -18,6 +21,7 @@ in
         layout=dwindle
       '';
       bindings = "";
+      startup = "";
     };
   };
 }

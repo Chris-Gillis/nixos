@@ -7,7 +7,6 @@ in
 
     ./features/desktop/common
     ./features/desktop/hyprland
-    ./features/sound/pipewire-combined-sink.nix
 
     ./features/games/lutris.nix
     ./features/games/bottles.nix
@@ -23,6 +22,9 @@ in
     bindings = ''
       bind=SUPER,t,layoutmsg,swapwithmaster auto
       bind=SUPERSHIFT,t,layoutmsg,focusmaster auto
+    '';
+    startup = ''
+      exec-once=pactl load-module module-combine-sink
     '';
   };
 
