@@ -26,8 +26,8 @@
         vulkan-loader
         winePackages.stagingFull
       ];
-      extraPkgs = pkgs: [
-
+      extraPkgs = pkgs: with pkgs; [
+        gamescope
       ];
     })
   ];
