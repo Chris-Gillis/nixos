@@ -19,5 +19,6 @@
     beekeeper-studio
     postman
     remmina
+    playerctl
   ];
 }

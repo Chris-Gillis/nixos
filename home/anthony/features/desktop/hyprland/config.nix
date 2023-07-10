@@ -125,11 +125,11 @@ in
   bind=,XF86MonBrightnessUp,exec,light -A 10
   bind=,XF86MonBrightnessDown,exec,light -U 10
 
-  bind=,XF86AudioNhyprland,exec,playerctl next
+  bind=,XF86AudioNext,exec,playerctl next
   bind=,XF86AudioPrev,exec,playerctl previous
   bind=,XF86AudioPlay,exec,playerctl play-pause
   bind=,XF86AudioStop,exec,playerctl stop
-  bind=ALT,XF86AudioNhyprland,exec,playerctld shift
+  bind=ALT,XF86AudioNext,exec,playerctld shift
   bind=ALT,XF86AudioPrev,exec,playerctld unshift
   bind=ALT,XF86AudioPlay,exec,systemctl --user restart playerctld
 
