@@ -7,6 +7,30 @@ Host gh
     PreferredAuthentications publickey
     IdentityFile /home/anthony/.ssh/id_rsa
     User git
+
+Host opnsense
+    Hostname opnsense.utthome.local
+    PreferredAuthentications publickey
+    IdentityFile /home/anthony/.ssh/id_rsa
+    User admin
+
+Host hashbrown
+    Hostname hashbrown.utthome.local
+    PreferredAuthentications publickey
+    IdentityFile /home/anthony/.ssh/id_rsa
+    User anthony
+
+Host homefry
+    Hostname homefry.utthome.local
+    PreferredAuthentications publickey
+    IdentityFile /home/anthony/.ssh/id_rsa
+    User anthony
+
+Host spud
+    Hostname spud.utthome.local
+    PreferredAuthentications publickey
+    IdentityFile /home/anthony/.ssh/id_rsa
+    User anthony
     '';
   };
 }
