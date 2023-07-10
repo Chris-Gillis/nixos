@@ -7,6 +7,7 @@ in
 
     ./features/desktop/common
     ./features/desktop/hyprland
+    ./features/sound/pipewire-combined-sink.nix
 
     ./features/games/lutris.nix
     ./features/games/bottles.nix
