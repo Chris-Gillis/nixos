@@ -10,6 +10,7 @@ in
 
     ./features/games/lutris.nix
     ./features/games/bottles.nix
+    ./features/games/steam.nix
   ];
 
   wallpaper = wallpapers.space-colonization;
