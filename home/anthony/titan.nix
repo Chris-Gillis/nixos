@@ -11,6 +11,7 @@ in
     ./features/games/lutris.nix
     ./features/games/bottles.nix
     ./features/games/steam.nix
+    ./features/3d-printing.nix
   ];
 
   wallpaper = wallpapers.space-colonization;

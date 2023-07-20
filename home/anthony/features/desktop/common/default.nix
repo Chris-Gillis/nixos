@@ -20,6 +20,5 @@
     postman
     remmina
     playerctl
-    blender
   ];
 }
