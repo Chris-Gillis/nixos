@@ -9,6 +9,7 @@
     ../common/users/anthony
 
     ../common/optional/wireless.nix
+    ../common/optional/bluetooth.nix
     ../common/optional/pipewire.nix
     ../common/optional/kmonad
     ../common/optional/docker.nix
