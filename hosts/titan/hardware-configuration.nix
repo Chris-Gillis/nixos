@@ -21,6 +21,7 @@
       };
       efi.canTouchEfiVariables = true;
     };
+    supportedFilesystems = [ "ext4" "vfat" "nfs" "ntfs" ];
   };
 
   fileSystems."/" =
