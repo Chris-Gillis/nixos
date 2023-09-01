@@ -20,5 +20,6 @@
     postman
     remmina
     playerctl
+    gimp
   ];
 }
