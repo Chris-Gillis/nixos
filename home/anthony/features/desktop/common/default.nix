@@ -21,5 +21,6 @@
     remmina
     playerctl
     gimp
+    figma-linux
   ];
 }
