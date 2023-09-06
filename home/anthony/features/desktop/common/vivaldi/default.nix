@@ -15,7 +15,7 @@
 
   # Proprietary codecs for Vivaldi
   home.packages = [
-    # pkgs.vivaldi-ffmpeg-codecs
+    pkgs.vivaldi-ffmpeg-codecs
   ];
 
   xdg.mimeApps.defaultApplications = {

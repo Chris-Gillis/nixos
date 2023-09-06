@@ -21,7 +21,7 @@
     remmina
     playerctl
     gimp
-    figma-linux
+    # figma-linux
     libsForQt5.dolphin
   ];
 }
