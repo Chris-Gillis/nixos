@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   imports = [
-    ./chromium.nix
+    # ./chromium.nix
     ./cursors.nix
     ./discord.nix
     ./firefox
@@ -21,7 +21,7 @@
     remmina
     playerctl
     gimp
-    # figma-linux
+    figma-linux
     libsForQt5.dolphin
   ];
 }
