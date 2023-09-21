@@ -231,5 +231,6 @@ in
   bind=SUPERSHIFT,f12,movetoworkspacesilent,22
 
   ${hyprland.bindings}
-''
 
+  windowrule=float,title:^(hyprland-fzfify)$
+''

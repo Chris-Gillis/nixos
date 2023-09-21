@@ -3,6 +3,8 @@
     ../common
     ../common/wayland
     inputs.hyprland.homeManagerModules.default
+
+    ./fzfify.nix
   ];
 
   programs.zsh.loginExtra = ''
