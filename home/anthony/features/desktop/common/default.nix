@@ -23,5 +23,6 @@
     gimp
     # figma-linux
     libsForQt5.dolphin
+    brightnessctl
   ];
 }
