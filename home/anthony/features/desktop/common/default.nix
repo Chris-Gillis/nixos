@@ -21,6 +21,7 @@
     remmina
     playerctl
     gimp
+    inkscape
     # figma-linux
     libsForQt5.dolphin
     brightnessctl
