@@ -24,6 +24,10 @@ in
     bindings = ''
       bind=SUPER,t,layoutmsg,swapwithmaster auto
       bind=SUPERSHIFT,t,layoutmsg,focusmaster auto
+      bind=SUPER,n,exec,$HOME/.config/hyprland-fzfify/new-workspace
+      bind=SUPERSHIFT,n,exec,$HOME/.config/hyprland-fzfify/rename-workspace
+      bind=SUPER,w,exec,$HOME/.config/hyprland-fzfify/move-to-workspace
+      bind=SUPERSHIFT,w,exec,$HOME/.config/hyprland-fzfify/move-window-to-workspace
     '';
     startup = ''
       exec-once=pactl load-module module-combine-sink
