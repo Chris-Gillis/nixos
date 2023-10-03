@@ -13,6 +13,7 @@ dc() {
 }
 
 alias cat='bat'
+alias pcat='bat --plain --color never'
 alias ls='exa'
 alias ll='exa -al'
 alias top='btop'
