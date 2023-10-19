@@ -21,8 +21,11 @@ in
     # Base colors
     col.inactive_border=$inactive_border
     col.active_border=$active_border
-    col.group_border=$group_border
-    col.group_border_active=$group_border_active
+  }
+
+  group {
+    col.border_inactive=$group_border
+    col.border_active=$group_border_active
   }
 
   decoration {

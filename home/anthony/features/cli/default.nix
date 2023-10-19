@@ -10,7 +10,7 @@
 
   home.packages = with pkgs; [
     btop
-    exa
+    eza
     ripgrep
     fd
     jq

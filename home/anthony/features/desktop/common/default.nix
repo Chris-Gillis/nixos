@@ -17,7 +17,7 @@
 
   home.packages = with pkgs; [
     beekeeper-studio
-    postman
+    # postman
     remmina
     playerctl
     gimp
