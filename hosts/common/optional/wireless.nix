@@ -10,9 +10,6 @@
         "UttAloufHome-5G" = {
           psk = "smilingvalley910";
         };
-        "ATTMxkE3Ks" = {
-          psk = "k9yam28bvp6d";
-        };
       };
     };
   };
