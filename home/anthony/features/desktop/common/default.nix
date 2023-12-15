@@ -2,7 +2,7 @@
   imports = [
     # ./chromium.nix
     ./cursors.nix
-    ./discord.nix
+    ./discord
     ./firefox
     ./eww
     ./light.nix
