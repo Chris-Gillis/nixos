@@ -8,7 +8,7 @@
         "https://discord-extensions.github.io/modern-indicators/src/source.css"
     ],
     "enabledThemes": [],
-    "enableReactDevtools": false,
+    "enableReactDevtools": true,
     "frameless": false,
     "transparent": false,
     "winCtrlQ": false,
@@ -60,7 +60,7 @@
             "enabled": false
         },
         "AlwaysTrust": {
-            "enabled": false
+            "enabled": true
         },
         "AnonymiseFileNames": {
             "enabled": false
@@ -81,7 +81,7 @@
             "enabled": false
         },
         "BetterUploadButton": {
-            "enabled": false
+            "enabled": true
         },
         "BiggerStreamPreview": {
             "enabled": false
@@ -117,7 +117,7 @@
             "enabled": false
         },
         "DisableDMCallIdle": {
-            "enabled": false
+            "enabled": true
         },
         "EmoteCloner": {
             "enabled": false
@@ -129,7 +129,7 @@
             "enabled": false
         },
         "FakeNitro": {
-            "enabled": false
+            "enabled": true
         },
         "FakeProfileThemes": {
             "enabled": false
@@ -186,7 +186,7 @@
             "enabled": false
         },
         "MemberCount": {
-            "enabled": false
+            "enabled": true
         },
         "MessageClickActions": {
             "enabled": false
@@ -294,7 +294,7 @@
             "enabled": false
         },
         "PreviewMessage": {
-            "enabled": false
+            "enabled": true
         },
         "PronounDB": {
             "enabled": false
