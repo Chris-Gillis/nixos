@@ -12,6 +12,7 @@ in
       "wheel"
       "audio"
       "video"
+      "dialout"
     ] ++ ifTheyExist [
       "network"
       "docker"
