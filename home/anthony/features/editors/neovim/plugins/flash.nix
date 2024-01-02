@@ -1,17 +1,5 @@
-{ pkgs, lib }:
-let
-  pluginFromGit = repo: ref: rev: pkgs.vimUtils.buildVimPluginFrom2Nix {
-    pname = "${lib.strings.sanitizeDerivationName repo}";
-    version = ref;
-    src = builtins.fetchGit {
-      url = "https://github.com/${repo}.git";
-      ref = ref;
-      rev = rev;
-    };
-  };
-in
-{
-  plugin = (pluginFromGit "folke/flash.nvim" "main" "47fdbbb139d54eef2a0d164e3080d9924c969f77");
+{ pkgs, lib }: {
+  plugin = pkgs.vimPlugins.flash-nvim;
   type = "lua";
   config = ''
     require("flash").setup({

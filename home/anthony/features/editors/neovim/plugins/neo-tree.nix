@@ -1,17 +1,5 @@
-{ pkgs, lib }:
-let
-  pluginFromGit = repo: ref: rev: pkgs.vimUtils.buildVimPluginFrom2Nix {
-    pname = "${lib.strings.sanitizeDerivationName repo}";
-    version = ref;
-    src = builtins.fetchGit {
-      url = "https://github.com/${repo}.git";
-      ref = ref;
-      rev = rev;
-    };
-  };
-in
-{
-  plugin = (pluginFromGit "nvim-neo-tree/neo-tree.nvim" "v2.x" "8324fd52f7880bf17142f56b45f544d64eff5ac9");
+{ pkgs, lib }: {
+  plugin = pkgs.vimPlugins.neo-tree-nvim;
   type = "lua";
   config = ''
     -- disable legacy commands
