@@ -15,6 +15,7 @@
     ../common/optional/docker.nix
     ../common/optional/quiet-boot.nix
     ../common/optional/qtgreet.nix
+    ../common/optional/wayland.nix
   ];
 
   networking = {

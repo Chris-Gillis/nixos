@@ -8,10 +8,6 @@
       { id = "aeblfdkhhhdcdjpifhhbdiojplfjncoa"; }  # 1Password
       { id = "fmkadmapgofadopljbjfkapdkoienihi"; }  # React Dev Tools
     ];
-    commandLineArgs = [
-      "--enable-features=UseOzonePlatform"
-      "--ozone-platform=wayland"
-    ];
   };
 
   # Proprietary codecs for Vivaldi

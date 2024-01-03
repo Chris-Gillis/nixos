@@ -13,6 +13,7 @@
     ../common/optional/greetd.nix
     ../common/optional/flatpak.nix
     ../common/optional/gamemode.nix
+    ../common/optional/wayland.nix
   ];
 
   networking = {
