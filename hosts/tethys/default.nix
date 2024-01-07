@@ -16,6 +16,7 @@
     ../common/optional/quiet-boot.nix
     ../common/optional/qtgreet.nix
     ../common/optional/wayland.nix
+    ../common/optional/flatpak.nix
   ];
 
   networking = {
