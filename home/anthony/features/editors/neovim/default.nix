@@ -1,4 +1,4 @@
-{ pkgs, config, unstable, lib, ... }:
+{ pkgs, unstable, lib, ... }:
 let
   plugins = import ./plugins { inherit pkgs lib; };
 in
@@ -14,6 +14,7 @@ in
       nodePackages.bash-language-server
       nodePackages.vscode-langservers-extracted
       nodePackages.eslint
+      nodejs_18
       docker-compose-language-service
       nodePackages.dockerfile-language-server-nodejs
       lua-language-server
@@ -24,8 +25,7 @@ in
       nodePackages.typescript-language-server
     ];
 
-    extraLuaPackages = luaPkgs: with luaPkgs; [
-    ];
+    extraLuaPackages = luaPkgs: [];
 
     plugins = builtins.attrValues plugins;
 

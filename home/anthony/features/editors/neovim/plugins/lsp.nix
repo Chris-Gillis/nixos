@@ -47,12 +47,16 @@
     lspconfig.eslint.setup({
       capabilities = capabilities,
       on_attach = function(client, bufnr)
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          buffer = bufnr,
-          command = "EslintFixAll",
-        })
+        -- vim.api.nvim_create_autocmd("BufWritePre", {
+          -- buffer = bufnr,
+          -- command = "EslintFixAll",
+        -- })
         on_attach(client, bufnr)
       end,
+      settings = {
+        debug = true,
+        nodePath = "${pkgs.nodePackages.eslint}/lib/node_modules",
+      },
     })
 
     -- lspconfig.gdscript.setup(base_opts)
