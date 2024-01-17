@@ -3,6 +3,7 @@ rec {
   koulen = prev.callPackage ./koulen.nix { };
   phosphor-icons = prev.callPackage ./phosphor.nix { };
   breezex-icon-theme = prev.callPackage ./breeze-cursor-theme.nix { };
+  nvchad = prev.callPackage ./nvchad { };
 
   dfipc = prev.libsForQt5.callPackage ./dfipc.nix { };
   dflogin1 = prev.libsForQt5.callPackage ./dflogin1.nix { };
