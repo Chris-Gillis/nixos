@@ -1,4 +1,15 @@
 local plugins = {
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = { "Copilot" },
+    event = "InsertEnter",
+    opts = function()
+      return require "custom.configs.copilot"
+    end,
+    config = function(_, opts)
+      require("copilot").setup(opts)
+    end,
+  },
   -- {
   --   "Exafunction/codeium.vim",
   --   config = function()
@@ -25,6 +36,7 @@ local plugins = {
   {
     "williamboman/mason.nvim",
     opts = {
+      log_level = vim.log.levels.DEBUG,
       ensure_installed = {
         "bash-language-server",
         "css-lsp",
@@ -120,6 +132,51 @@ local plugins = {
       dofile(vim.g.base46_cache .. "nvimtree")
       require("nvim-tree").setup(opts)
       vim.g.nvimtree_side = opts.view.side
+    end,
+  },
+  {
+    "folke/flash.nvim",
+    event = { "BufRead", "BufNewFile" },
+    init = function()
+      vim.keymap.set({ 'n', 'x', 'o' }, 's', function()
+        require("flash").jump({
+          search = {
+            mode = function(str)
+              return "\\<" .. str
+            end,
+          },
+        })
+      end)
+    end,
+    opts = {
+      search = {
+        mode = function(str)
+          return "\\<" .. str
+        end,
+      },
+    },
+    config = function(_, opts)
+      require("flash").setup(opts)
+    end,
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    event = { "InsertEnter" },
+    opts = function()
+      return require "custom.configs.gitsigns"
+    end,
+    config = function(_, opts)
+      require("gitsigns").setup(opts)
+    end,
+  },
+  {
+    "folke/trouble.nvim",
+    event = { "BufRead", "BufNewFile" },
+    init = function()
+      require("core.utils").load_mappings "trouble"
+    end,
+    config = function()
+      require("trouble").setup()
     end,
   },
 }
