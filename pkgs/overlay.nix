@@ -2,7 +2,7 @@ final: prev:
 rec {
   breezex-icon-theme = prev.callPackage ./breeze-cursor-theme.nix { };
   koulen = prev.callPackage ./koulen.nix { };
-  logseqEGL = prev.callPackage ./logseq.nix { };
+  logseq-appimage = prev.callPackage ./logseq.nix { };
   phosphor-icons = prev.callPackage ./phosphor.nix { };
   nvchad = prev.callPackage ./nvchad { };
 

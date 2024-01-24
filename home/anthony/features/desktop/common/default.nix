@@ -25,6 +25,6 @@
     # figma-linux
     libsForQt5.dolphin
     brightnessctl
-    logseqEGL
+    logseq-appimage
   ];
 }
