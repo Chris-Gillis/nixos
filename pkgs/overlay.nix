@@ -1,8 +1,9 @@
 final: prev:
 rec {
-  koulen = prev.callPackage ./koulen.nix { };
-  phosphor-icons = prev.callPackage ./phosphor.nix { };
   breezex-icon-theme = prev.callPackage ./breeze-cursor-theme.nix { };
+  koulen = prev.callPackage ./koulen.nix { };
+  logseqEGL = prev.callPackage ./logseq.nix { };
+  phosphor-icons = prev.callPackage ./phosphor.nix { };
   nvchad = prev.callPackage ./nvchad { };
 
   dfipc = prev.libsForQt5.callPackage ./dfipc.nix { };
