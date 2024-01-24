@@ -15,6 +15,7 @@ in
     extraPackages = with pkgs; [
       nodejs_20
       gcc
+      typescript
     ];
   };
 

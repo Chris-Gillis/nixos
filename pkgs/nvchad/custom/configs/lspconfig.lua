@@ -76,4 +76,14 @@ lspconfig.lua_ls.setup({
 
 lspconfig.solargraph.setup(base_opts)
 lspconfig.sqlls.setup(base_opts)
-lspconfig.tsserver.setup(base_opts)
+lspconfig.tsserver.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  -- on_init = function(client)
+  --   local path = client.workspace_folders[1].name
+  --
+  --   if path:match("amplify$") then
+  --     client.config.settings["root_dir"] = path .. "/client/package.json"
+  --   end
+  -- end,
+})
