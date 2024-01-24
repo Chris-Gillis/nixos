@@ -24,6 +24,7 @@
     packages = with pkgs; [
       inputs.hyprwm-contrib.packages.${system}.grimblast
       inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
     ];
   };
 

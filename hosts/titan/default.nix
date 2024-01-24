@@ -26,7 +26,7 @@
 
   programs.hyprland = {
     enable = true;
-    xwayland.enable = true;
+    xwayland.enable = false;
   };
 
   services = { };
