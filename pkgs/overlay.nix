@@ -4,6 +4,7 @@ rec {
   koulen = prev.callPackage ./koulen.nix { };
   phosphor-icons = prev.callPackage ./phosphor.nix { };
   nvchad = prev.callPackage ./nvchad { };
+  ventoy-latest = prev.callPackage ./ventoy { };
 
   dfipc = prev.libsForQt5.callPackage ./dfipc.nix { };
   dflogin1 = prev.libsForQt5.callPackage ./dflogin1.nix { };

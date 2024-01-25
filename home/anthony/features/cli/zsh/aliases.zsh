@@ -21,3 +21,5 @@ alias top='btop'
 alias sdf='ssh -t rufus@tty.sdf.org'
 alias pt='porsmo'
 alias speedtest='speedtest-rs'
+
+alias fuck='doas `fc -n -l -1`'
