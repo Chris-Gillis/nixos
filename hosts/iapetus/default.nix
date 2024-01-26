@@ -26,7 +26,7 @@
     openssh = {
       enable = true;
       settings = {
-        PermitRootLogin = false;
+        PermitRootLogin = "no";
         PasswordAuthentication = false;
       };
     };
