@@ -4,6 +4,7 @@
 
     ./hardware-configuration.nix
 
+    ../common/global
     ../common/users/anthony
 
     ../common/optional/docker.nix
@@ -30,9 +31,6 @@
       };
     };
   };
-
-  # Enable polkit for Sway/Wayland
-  security.polkit.enable = true;
 
   home-manager = {
     extraSpecialArgs = { inherit inputs unstable; };
