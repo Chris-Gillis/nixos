@@ -19,7 +19,7 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    supportedFileSystems = [ "vfat" "ext4" ];
+    supportedFilesystems = [ "ext4" "vfat" ];
   };
 
 
