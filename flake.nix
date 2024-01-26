@@ -63,6 +63,7 @@
     nixosConfigurations = {
       tethys = mkNixos [ ./hosts/tethys ];
       titan = mkNixos [ ./hosts/titan ];
+      iapetus = mkNixos [ ./hosts/iapetus ];
     };
   };
 }
