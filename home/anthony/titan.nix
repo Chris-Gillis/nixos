@@ -15,6 +15,7 @@ in
     ./features/3d-printing.nix
   ];
 
+  isWorkstation = true;
   wallpaper = wallpapers.space-colonization;
   primaryNetworkInterface = "enp7s0";
 

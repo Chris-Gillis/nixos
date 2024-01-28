@@ -1,4 +1,6 @@
 { pkgs, lib, config, ... }:
+let inherit (config) isWorkstation;
+in
 {
   programs.zsh = {
     enable = true;
@@ -9,7 +11,7 @@
     initExtra = ''
       ${lib.strings.fileContents ./env.zsh}
       ${lib.strings.fileContents ./aliases.zsh}
-      ${lib.strings.fileContents ./init.zsh}
+      ${if isWorkstation then lib.strings.fileContents ./init.zsh else ""}
     '';
 
     oh-my-zsh = {

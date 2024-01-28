@@ -1,9 +1,11 @@
+{ lib, ... }:
+let inhherit (lib) types mkOption;
+in
 {
-  imports = [
-    ./eww.nix
-    ./hyprland.nix
-    ./interface.nix
-    ./monitors.nix
-    ./wallpaper.nix
-  ];
+  options.isWorkstation = mkOption {
+    type = types.bool;
+    default = false;
+    description = "Whether to install the workstation configuration";
+  };
+  }
 }

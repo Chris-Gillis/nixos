@@ -11,6 +11,7 @@ in
     ./features/desktop/wireless
   ];
 
+  isWorkstation = true;
   wallpaper = wallpapers.planet-vector-art;
   primaryNetworkInterface = "wlp0s20f3";
 

@@ -7,6 +7,7 @@ in
 {
   imports = [
     ../features/cli
+    ./modules/workstation.nix
   ];
 
   nixpkgs = {
