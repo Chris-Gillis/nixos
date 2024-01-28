@@ -24,17 +24,17 @@
 
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/da9fea64-9b50-4bf7-9651-b2ce0cfee900";
+    { device = "/dev/disk/by-label/NIXROOT";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/3DA2-FD79";
+    { device = "/dev/disk/by-label/NIXBOOT";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/47dd6b13-0aed-4e81-8100-0c0ef756d952"; }
+    [ { device = "/dev/disk/by-label/NIXSWAP"; }
     ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

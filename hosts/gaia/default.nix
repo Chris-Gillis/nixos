@@ -14,11 +14,7 @@
     hostName = "gaia";
     useDHCP = false;
     interfaces.enp7s0 = {
-      useDHCP = false;
-      ipv4.addresses = [{
-        address = "10.37.15.1";
-        prefixLength = 23;
-      }];
+      useDHCP = true;
     };
   };
 
