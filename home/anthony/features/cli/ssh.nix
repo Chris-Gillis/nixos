@@ -31,6 +31,12 @@ Host spud
     PreferredAuthentications publickey
     IdentityFile /home/anthony/.ssh/id_rsa
     User anthony
+
+Host gaia
+    Hostname gaia.utthome.local
+    PreferredAuthentications publickey
+    IdentityFile /home/anthony/.ssh/id_rsa
+    User anthony
     '';
   };
 }

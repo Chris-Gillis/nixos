@@ -4,6 +4,7 @@ in
 {
   imports = [
     ./global
+    ./global/workstation.nix
 
     ./features/desktop/common
     ./features/desktop/hyprland

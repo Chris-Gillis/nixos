@@ -4,7 +4,6 @@
     ./git.nix
     ./misc-tools.nix
     ./ssh.nix
-    ./zellij.nix
     ./zsh
   ];
 

@@ -6,9 +6,6 @@ let
 in
 {
   imports = [
-    ./modules
-    # ../features/editors/neovim
-    ../features/editors/nvchad
     ../features/cli
   ];
 

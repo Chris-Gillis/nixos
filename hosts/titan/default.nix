@@ -7,6 +7,7 @@
     ../common/global
     ../common/users/anthony
 
+    ../common/optional/workstation.nix
     ../common/optional/pipewire.nix
     ../common/optional/docker.nix
     ../common/optional/quiet-boot.nix

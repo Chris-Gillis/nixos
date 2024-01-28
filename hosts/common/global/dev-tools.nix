@@ -10,11 +10,6 @@
     # Compilers
     gcc
 
-    # Language Support
-    ruby
-    nodejs
-    rust-bin.stable.latest.default
-
     # Misc Libs & Utils
     zip
     unzip

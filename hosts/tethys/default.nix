@@ -8,6 +8,7 @@
     ../common/global
     ../common/users/anthony
 
+    ../common/optional/workstation.nix
     ../common/optional/wireless.nix
     ../common/optional/bluetooth.nix
     ../common/optional/pipewire.nix
