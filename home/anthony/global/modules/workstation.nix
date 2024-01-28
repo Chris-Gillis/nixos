@@ -1,5 +1,5 @@
 { lib, ... }:
-let inhherit (lib) types mkOption;
+let inherit (lib) types mkOption;
 in
 {
   options.isWorkstation = mkOption {
@@ -7,5 +7,4 @@ in
     default = false;
     description = "Whether to install the workstation configuration";
   };
-  }
 }
