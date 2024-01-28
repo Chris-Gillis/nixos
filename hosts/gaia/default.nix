@@ -11,7 +11,7 @@
   ];
 
   networking = {
-    hostName = "iapetus";
+    hostName = "gaia";
     useDHCP = false;
     interfaces.enp7s0 = {
       useDHCP = false;
@@ -35,7 +35,7 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs unstable; };
     users = {
-      anthony = import ../../home/anthony/iapetus.nix;
+      anthony = import ../../home/anthony/gaia.nix;
     };
   };
 
