@@ -23,6 +23,10 @@
     interfaces.enp7s0 = {
       useDHCP = true;
     };
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 80 443 3000 3001 8000 8001 8080 ];
+    };
   };
 
   programs.hyprland = {
