@@ -1,0 +1,5 @@
+# Encrypt all .gc.key files in repo
+**/*.gc.key filter=git-crypt diff=git-crypt
+
+# Do not encrypt .gitattributes file
+.gitattributes !filter !diff
