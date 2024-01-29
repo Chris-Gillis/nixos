@@ -100,7 +100,7 @@ in
         REV_SERVER_DOMAIN = cfg.routerDomain;
         REV_SERVER_TARGET = cfg.routerIp;
         REV_SERVER_CIDR = cfg.routerCidr;
-        DNSMASK_LISTENING = "all";
+        DNSMASQ_LISTENING = "all";
       };
       extraOptions = [
         "--add-host=host.docker.internal:host-gateway"
