@@ -51,7 +51,7 @@ in
 
       webPassword = lib.mkOption {
         type = lib.types.singleLineStr;
-        default = "toor";
+        default = builtins.readFile ./pihole.gc.key;
       };
 
       customDnsEntries = lib.mkOption {
@@ -102,12 +102,9 @@ in
         REV_SERVER_CIDR = cfg.routerCidr;
         DNSMASQ_LISTENING = "all";
       };
-      extraOptions = [
-        "--add-host=host.docker.internal:host-gateway"
-      ];
     };
 
-    systemd.services."docker-pihole".postStart = ''
+    systemd.services."${config.virtualisation.oci-containers.backend}-pihole".postStart = ''
       while ! docker ps | grep pihole; do
         sleep 10s
         echo "Waiting on container"
@@ -132,5 +129,8 @@ in
       # Apply changes
       docker exec pihole pihole -g
     '';
+
+    networking.firewall.allowedTCPPorts = [ cfg.httpPort cfg.dnsPort ];
+    networking.firewall.allowedUDPPorts = [ cfg.dnsPort ];
   };
 }

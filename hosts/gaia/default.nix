@@ -6,8 +6,6 @@
 
     ../common/global
     ../common/users/anthony
-
-    ../common/optional/docker.nix
   ];
 
   networking = {
@@ -15,6 +13,11 @@
     useDHCP = false;
     interfaces.enp7s0 = {
       useDHCP = true;
+    };
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [];
+      allowedUDPPorts = [];
     };
   };
 
@@ -65,6 +68,12 @@
     };
 
     nginx-proxy-manager.enable = true;
+
+    bitwarden = {
+      enable = true;
+      port = 44745;
+      domain = "https://vaultwarden.uttho.me";
+    };
   };
 
   home-manager = {

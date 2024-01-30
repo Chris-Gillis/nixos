@@ -47,5 +47,7 @@ in
       "d /data/nginx-proxy-manager/data 0755 nginx nginx -"
       "d /data/nginx-proxy-manager/letsencrypt 0755 nginx nginx -"
     ];
+
+    networking.firewall.allowedTCPPorts = [ cfg.adminPort 80 443 ];
   };
 }

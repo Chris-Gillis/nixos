@@ -1,5 +1,8 @@
 {
   qtgreet = import ./qtgreet.nix;
-  pihole = import ./services/pihole.nix;
+
+  # Services
+  pihole = import ./services/pihole;
   nginx-proxy-manager = import ./services/nginx-proxy-manager.nix;
+  vaultwarden = import ./services/vaultwarden;
 }

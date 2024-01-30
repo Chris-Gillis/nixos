@@ -13,6 +13,7 @@
     # Misc Libs & Utils
     zip
     unzip
+    git-crypt
   ];
 
   services.dbus.packages = [ pkgs.gcr ];
