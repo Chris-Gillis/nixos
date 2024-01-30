@@ -10,6 +10,9 @@
     # Compilers
     gcc
 
+    # Network tools
+    tdns-cli
+
     # Misc Libs & Utils
     zip
     unzip
