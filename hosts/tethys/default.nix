@@ -14,8 +14,7 @@
     ../common/optional/pipewire.nix
     ../common/optional/kmonad
     ../common/optional/docker.nix
-    ../common/optional/quiet-boot.nix
-    ../common/optional/qtgreet.nix
+    ../common/optional/greetd.nix
     ../common/optional/wayland.nix
     ../common/optional/flatpak.nix
   ];
