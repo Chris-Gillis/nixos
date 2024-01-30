@@ -10,7 +10,6 @@
     ../common/optional/workstation.nix
     ../common/optional/pipewire.nix
     ../common/optional/docker.nix
-    ../common/optional/quiet-boot.nix
     ../common/optional/greetd.nix
     ../common/optional/flatpak.nix
     ../common/optional/gamemode.nix
