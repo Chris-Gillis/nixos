@@ -28,6 +28,18 @@ local plugins = {
     end
   },
   {
+    "hrsh7th/nvim-cmp",
+    config = function(_, opts)
+      local cmp = require "cmp"
+      opts.completion.completeopt = "menu,menuone,noinsert,noselect"
+      opts.mapping["<CR>"] = cmp.mapping.confirm {
+        behavior = cmp.ConfirmBehavior.Replace,
+        select = false,
+      }
+      cmp.setup(opts)
+    end,
+  },
+  {
     "simrat39/rust-tools.nvim",
     config = function()
       require "custom.configs.rust_tools"
