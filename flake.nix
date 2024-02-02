@@ -54,8 +54,17 @@
       ];
       specialArgs = { inherit inputs outputs unstable nix-gaming; };
     };
+
+    mkNixosImage = modules: nixpkgs.lib.nixosSystem {
+      modules = modules ++ [
+        ({ pkgs, ... }: {
+          nixpkgs.overlays = builtins.attrValues overlays;
+        })
+      ];
+      specialArgs = { inherit inputs outputs unstable; };
+    };
   in
-  {
+  rec {
     nixosModules = import ./modules/nixos;
 
     packages = forEachPkgs (pkgs: (import ./pkgs { inherit pkgs; }));
@@ -64,6 +73,13 @@
       tethys = mkNixos [ ./hosts/tethys ];
       titan = mkNixos [ ./hosts/titan ];
       gaia = mkNixos [ ./hosts/gaia ];
+
+      # Devices
+      lepotato = mkNixosImage [ ./devices/lepotato.nix ];
+    };
+
+    images = {
+      lepotato = nixosConfigurations.lepotato.config.system.build.sdImage;
     };
   };
 }
