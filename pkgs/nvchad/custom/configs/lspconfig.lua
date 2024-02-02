@@ -76,6 +76,7 @@ lspconfig.lua_ls.setup({
 
 lspconfig.solargraph.setup(base_opts)
 lspconfig.sqlls.setup(base_opts)
+lspconfig.tailwindcss.setup(base_opts)
 lspconfig.tsserver.setup({
   capabilities = capabilities,
   on_attach = on_attach,

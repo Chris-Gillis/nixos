@@ -65,6 +65,7 @@ local plugins = {
         "rust-analyzer",
         "solargraph",
         "sqlls",
+        "tailwindcss-language-server",
         "typescript-language-server",
       },
     },
