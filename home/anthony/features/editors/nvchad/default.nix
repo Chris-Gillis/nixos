@@ -4,8 +4,17 @@ let
 
   populateEnvScript = ''
     mkdir -p ${config.xdg.dataHome}/nvim/site/plugin
-    ${pkgs.python39}/bin/python ${populateEnv} -o ${config.xdg.dataHome}/nvim/site/plugin
+    ${pkgs.python311}/bin/python ${populateEnv} -o ${config.xdg.dataHome}/nvim/site/plugin
   '';
+
+  pythonDeps = pkgs.python311.withPackages (ps: with ps; [
+    python-dotenv
+    requests
+    pynvim
+    # pynvim-latest
+    prompt-toolkit
+    tiktoken
+  ]);
 in
 {
   programs.neovim = {
@@ -16,6 +25,7 @@ in
       nodejs_20
       gcc
       typescript
+      pythonDeps
     ];
   };
 

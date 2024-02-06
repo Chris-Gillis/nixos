@@ -1,4 +1,4 @@
-{ pkgs, stdenv, lib }:
+{ pkgs, stdenv, lib, ... }:
 let
   custom = ./custom;
 in

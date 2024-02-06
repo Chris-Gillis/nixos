@@ -10,6 +10,37 @@ local plugins = {
       require("copilot").setup(opts)
     end,
   },
+  {
+    "jellydn/CopilotChat.nvim",
+    branch = "canary",
+    cmd = {
+      "CopilotChat",
+      "CopilotChatExplain",
+      "CopilotChatTests",
+      "CopilotChatReview",
+      "CopilotChatRefactor",
+      "CopilotChatSummarize",
+      "CopilotChatSpelling",
+      "CopilotChatWording",
+      "CopilotChatConcise",
+      "CopilotChatVsplitVisual",
+      "CopilotChatInPlace",
+      "UpdateRemotePlugins",
+    },
+    event = "VeryLazy",
+    opts = {
+      mode = "split",
+    },
+    init = function()
+      require("core.utils").load_mappings "copilotchat"
+    end,
+    build = function()
+      vim.defer_fn(function()
+        vim.cmd("UpdateRemotePlugins")
+        vim.notify("CopilotChat - Updated remote plugins. Please restart Neovim.")
+      end, 3000)
+    end,
+  },
   -- {
   --   "Exafunction/codeium.vim",
   --   config = function()

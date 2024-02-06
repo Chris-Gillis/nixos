@@ -12,4 +12,6 @@ rec {
   dfapplications = prev.libsForQt5.callPackage ./dfapplications.nix { inherit dfipc; };
   wayqt = prev.libsForQt5.callPackage ./wayqt.nix { };
   qtgreet = prev.libsForQt5.callPackage ./qtgreet.nix { inherit wayqt dfapplications dfutils dflogin1; };
+
+  pynvim-latest = prev.python311Packages.callPackage ./pynvim.nix { };
 }
