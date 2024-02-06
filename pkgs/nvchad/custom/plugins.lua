@@ -142,6 +142,17 @@ local plugins = {
     },
   },
   {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = { "BufRead", "BufNewFile" },
+    cmd = { "TSContextEnable", "TSContextDisable", "TSContextToggle" },
+    opts = {
+      enable = true,
+    },
+    config = function(_, opts)
+      require("treesitter-context").setup(opts)
+    end,
+  },
+  {
     "ethanholz/nvim-lastplace",
     config = function()
       require("nvim-lastplace").setup()
