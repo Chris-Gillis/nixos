@@ -9,7 +9,17 @@ local base_opts = {
 }
 
 lspconfig.bashls.setup(base_opts)
-lspconfig.cssls.setup(base_opts)
+lspconfig.cssls.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    css = {
+      lint = {
+        unknownAtRules = "ignore",
+      },
+    },
+  },
+})
 lspconfig.cssmodules_ls.setup(base_opts)
 lspconfig.docker_compose_language_service.setup(base_opts)
 lspconfig.dockerls.setup(base_opts)
