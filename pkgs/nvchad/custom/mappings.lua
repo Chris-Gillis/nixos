@@ -37,4 +37,17 @@ M.trouble = {
   },
 }
 
+M.lspconfig = {
+  plugin = true,
+
+  n = {
+    ["<leader>f"] = {
+      function()
+        vim.diagnostic.open_float { border = "rounded" }
+      end,
+      "floating diagnostic",
+    },
+  },
+}
+
 return M
