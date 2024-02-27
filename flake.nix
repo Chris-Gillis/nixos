@@ -56,6 +56,7 @@
     };
 
     mkNixosImage = modules: nixpkgs.lib.nixosSystem {
+      system = "aarch64-linux";
       modules = modules ++ [
         ({ pkgs, ... }: {
           nixpkgs.overlays = builtins.attrValues overlays;

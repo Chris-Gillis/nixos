@@ -15,6 +15,10 @@ let
     prompt-toolkit
     tiktoken
   ]);
+
+  rubyDeps = pkgs.ruby.withPackages (p: with p; [
+    solargraph
+  ]);
 in
 {
   programs.neovim = {
@@ -26,6 +30,7 @@ in
       gcc
       typescript
       pythonDeps
+      rubyDeps
     ];
   };
 

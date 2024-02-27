@@ -5,7 +5,6 @@
     wget
     curl
     git
-    pinentry
 
     # Compilers
     gcc
@@ -18,12 +17,4 @@
     unzip
     git-crypt
   ];
-
-  services.dbus.packages = [ pkgs.gcr ];
-  services.pcscd.enable = true;
-  programs.gnupg.agent = {
-     enable = true;
-     pinentryFlavor = "curses";
-     enableSSHSupport = true;
-  };
 }
