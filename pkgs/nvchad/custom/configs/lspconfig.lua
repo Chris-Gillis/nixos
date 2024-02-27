@@ -90,11 +90,34 @@ lspconfig.tailwindcss.setup(base_opts)
 lspconfig.tsserver.setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  -- on_init = function(client)
-  --   local path = client.workspace_folders[1].name
-  --
-  --   if path:match("amplify$") then
-  --     client.config.settings["root_dir"] = path .. "/client/package.json"
-  --   end
-  -- end,
+  before_init = function(params)
+    params.processId = vim.NIL
+  end,
+  on_new_config = function(new_config, new_root_dir)
+    if new_root_dir:match("amplify/client$") then
+      new_config.cmd = require("lspcontainers").command(
+        'tsserver',
+        {
+          root_dir = new_root_dir,
+          docker_volume = "client_node_modules",
+          cmd_builder = function(runtime, workdir, image, network, docker_volume)
+            local mnt_volume = "--volume="..workdir..":"..workdir..":z"
+            local node_volume = "--volume="..docker_volume..":"..workdir.."/node_modules:z"
+            return {
+              runtime,
+              "container",
+              "run",
+              "--interactive",
+              "--rm",
+              "--network="..network,
+              "--workdir="..workdir,
+              mnt_volume,
+              node_volume,
+              image
+            }
+          end,
+        }
+      )
+    end
+  end,
 })

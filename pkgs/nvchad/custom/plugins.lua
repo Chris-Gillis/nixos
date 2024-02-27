@@ -59,6 +59,9 @@ local plugins = {
     end
   },
   {
+    "lspcontainers/lspcontainers.nvim"
+  },
+  {
     "hrsh7th/nvim-cmp",
     config = function(_, opts)
       local cmp = require "cmp"
