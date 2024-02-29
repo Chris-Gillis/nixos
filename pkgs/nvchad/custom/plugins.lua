@@ -39,7 +39,7 @@ local plugins = {
       },
       auto_follow_cursor = false,
       mappings = {
-        close = "<Esc>",
+        close = "q",
         reset = "<C-r>",
         complete = "<Tab>",
         submit_prompt = "<CR>",
