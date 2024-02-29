@@ -32,6 +32,15 @@ in
       pythonDeps
       rubyDeps
     ];
+    withPython3 = true;
+    extraPython3Packages = (ps: with ps; [
+      python-dotenv
+      requests
+      pynvim
+      # pynvim-latest
+      prompt-toolkit
+      tiktoken
+    ]);
   };
 
   xdg.configFile."nvim".source = "${pkgs.nvchad}";
