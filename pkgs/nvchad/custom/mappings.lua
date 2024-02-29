@@ -44,9 +44,9 @@ M.copilotchat = {
       "CopilotChat - Quick chat",
     },
     ["<leader>ccd"] = { "<cmd>CopilotChatDebugInfo<cr>", "CopilotChat - Debug Info" },
-    ["<leader>ccf"] = { "<cmd>CopilotChatFixDiagnostic<cr>", "CopilotChat - Debug Info" },
-    ["<leader>ccl"] = { "<cmd>CopilotChatReset<cr>", "CopilotChat - Debug Info" },
-    ["<leader>ccv"] = { "<cmd>CopilotChatToggle<cr>", "CopilotChat - Debug Info" },
+    ["<leader>ccf"] = { "<cmd>CopilotChatFixDiagnostic<cr>", "CopilotChat - Fix Diagnostic" },
+    ["<leader>ccl"] = { "<cmd>CopilotChatReset<cr>", "CopilotChat - Clear buffer and chat history" },
+    ["<leader>ccv"] = { "<cmd>CopilotChatToggle<cr>", "CopilotChat - Toggle Vsplit" },
   },
   x = {
     ["<leader>ccp"] = {
