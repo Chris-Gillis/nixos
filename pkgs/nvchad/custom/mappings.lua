@@ -4,14 +4,61 @@ M.copilotchat = {
   plugin = true,
 
   n = {
+    ["<leader>cch"] = {
+      function()
+        require("CopilotChat.code_actions").show_help_actions({
+          selection = require("CopilotChat.select").line,
+        })
+      end,
+      "CopilotChat - Help actions",
+    },
+    ["<leader>ccp"] = {
+      function()
+        require("CopilotChat.code_actions").show_prompt_actions()
+      end,
+      "CopilotChat - Prompt actions",
+    },
     ["<leader>cce"] = { "<cmd>CopilotChatExplain<cr>", "CopilotChat - Explain code" },
     ["<leader>cct"] = { "<cmd>CopilotChatTests<cr>", "CopilotChat - Generate tests" },
     ["<leader>ccr"] = { "<cmd>CopilotChatReview<cr>", "CopilotChat - Review code" },
     ["<leader>ccR"] = { "<cmd>CopilotChatRefactor<cr>", "CopilotChat - Refactor code" },
-    ["<leader>ccs"] = { "<cmd>CopilotChatSummarize<cr>", "CopilotChat - Summarize text" },
-    ["<leader>ccS"] = { "<cmd>CopilotChatSpelling<cr>", "CopilotChat - Correct spelling" },
-    ["<leader>ccw"] = { "<cmd>CopilotChatWording<cr>", "CopilotChat - Improve wording" },
-    ["<leader>ccc"] = { "<cmd>CopilotChatConcise<cr>", "CopilotChat - Make text concise" },
+    ["<leader>ccn"] = { "<cmd>CopilotChatBetterNamings<cr>", "CopilotChat - Better naming" },
+    ["<leader>cci"] = {
+      function()
+        local input = vim.fn.input("Ask Copilot: ")
+        if input ~= "" then
+          vim.cmd("CopilotChat " .. input)
+        end
+      end,
+      "CopilotChat - Ask input",
+    },
+    ["<leader>ccm"] = { "<cmd>CopilotChatCommit<cr>", "CopilotChat - Generate commit message for all changes" },
+    ["<leader>ccM"] = { "<cmd>CopilotChatCommitStaged<cr>", "CopilotChat - Generate commit message for staged changes" },
+    ["<leader>ccq"] = {
+      function()
+        local input = vim.fn.input("Quick Chat: ")
+        if input ~= "" then
+          vim.cmd("CopilotChatBuffer " .. input)
+        end
+      end,
+      "CopilotChat - Quick chat",
+    },
+    ["<leader>ccd"] = { "<cmd>CopilotChatDebugInfo<cr>", "CopilotChat - Debug Info" },
+    ["<leader>ccf"] = { "<cmd>CopilotChatFixDiagnostic<cr>", "CopilotChat - Debug Info" },
+    ["<leader>ccl"] = { "<cmd>CopilotChatReset<cr>", "CopilotChat - Debug Info" },
+    ["<leader>ccv"] = { "<cmd>CopilotChatToggle<cr>", "CopilotChat - Debug Info" },
+  },
+  x = {
+    ["<leader>ccp"] = {
+      function()
+        require("CopilotChat.code_actions").show_prompt_actions({
+          selection = require("CopilotChat.select").visual,
+        })
+      end,
+      "CopilotChat - Prompt actions",
+    },
+    ["<leader>ccv"] = { ":CopilotChatVisual", "CopilotChat - Open in vertical split" },
+    ["<leader>ccx"] = { ":CopilotChatInline<cr>", "CopilotChat - Inline chat" },
   },
 }
 
