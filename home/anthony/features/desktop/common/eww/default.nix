@@ -1,7 +1,7 @@
 { pkgs, config, lib, ... }:
 {
   home = {
-    packages = [ pkgs.eww-wayland ];
+    packages = [ pkgs.eww ];
     sessionVariables = {
       EWW_NETWORK_INTERFACE = config.primaryNetworkInterface;
     };
