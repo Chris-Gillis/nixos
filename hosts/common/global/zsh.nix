@@ -9,6 +9,7 @@ in
       nrs = "doas nixos-rebuild switch --flake ~/source/nix#${host}";
       nrt = "doas nixos-rebuild test --flake ~/source/nix#${host}";
       ncg = "doas nix-collect-garbage --delete-older-than 1d";
+      ns = "(){ nix develop ~/source/nix#$1 ;}";
     };
   };
 }
