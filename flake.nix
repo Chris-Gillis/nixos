@@ -36,6 +36,7 @@
     forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
 
     system = "x86_64-linux";
+    pkgs = import nixpkgs { inherit system; };
     unstable = import nixpkgs-unstable { inherit system; };
 
     overlays = {
@@ -82,5 +83,7 @@
     images = {
       lepotato = nixosConfigurations.lepotato.config.system.build.sdImage;
     };
+
+    devShells."${system}" = import ./shells { inherit pkgs; };
   };
 }
