@@ -21,6 +21,7 @@ in
       gcc
       typescript
       rubyDeps
+      silicon
     ];
     withPython3 = true;
     extraPython3Packages = (ps: with ps; [

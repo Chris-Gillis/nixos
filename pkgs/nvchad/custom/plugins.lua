@@ -1,5 +1,17 @@
 local plugins = {
   {
+    "michaelrommel/nvim-silicon",
+    event = "VeryLazy",
+    cmd = { "Silicon" },
+    opts = {
+      font = "ComicShannsMono Nerd Font=34",
+      to_clipboard = true,
+    },
+    config = function(_, opts)
+      require("silicon").setup(opts)
+    end,
+  },
+  {
     "zbirenbaum/copilot.lua",
     cmd = { "Copilot" },
     event = "InsertEnter",
