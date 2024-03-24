@@ -19,19 +19,62 @@ M.opts = {
   },
   auto_follow_cursor = false,
   mappings = {
-    close = "<Esc>",
-    reset = "<C-r>",
-    complete = "<Tab>",
-    submit_prompt = "<CR>",
-    accept_diff = "<C-a>",
-    show_diff = "<C-s>",
-  }
+    -- Use tab for completion
+    complete = {
+      detail = "Use @<Tab> or /<Tab> for options.",
+      insert = "<Tab>",
+    },
+    -- Close the chat
+    close = {
+      normal = "q",
+      insert = "<C-c>",
+    },
+    -- Reset the chat buffer
+    reset = {
+      normal = "<C-l>",
+      insert = "<C-l>",
+    },
+    -- Submit the prompt to Copilot
+    submit_prompt = {
+      normal = "<CR>",
+      insert = "<C-CR>",
+    },
+    -- Accept the diff
+    accept_diff = {
+      normal = "<C-y>",
+      insert = "<C-y>",
+    },
+    -- Show the diff
+    show_diff = {
+      normal = "gmd",
+    },
+    -- Show the prompt
+    show_system_prompt = {
+      normal = "gmp",
+    },
+    -- Show the user selection
+    show_user_selection = {
+      normal = "gms",
+    },
+  },
 }
 
 M.config = function(_, opts)
   local chat = require("CopilotChat")
   local select = require("CopilotChat.select")
   opts.selection = select.unnamed
+
+  -- Override the git prompts message
+  opts.prompts.Commit = {
+    prompt = "Write commit message for the change with commitizen convention",
+    selection = select.gitdiff,
+  }
+  opts.prompts.CommitStaged = {
+    prompt = "Write commit message for the change with commitizen convention",
+    selection = function(source)
+      return select.gitdiff(source, true)
+    end,
+  }
 
   chat.setup(opts)
 
@@ -55,6 +98,15 @@ M.config = function(_, opts)
   vim.api.nvim_create_user_command("CopilotChatBuffer", function(args)
     chat.ask(args.args, { selection = select.buffer })
   end, { nargs = "*", range = true})
+
+  -- Custom buffer for CopilotChat
+  vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = "copilot-*",
+    callback = function()
+      vim.opt_local.relativenumber = false
+      vim.opt_local.number = false
+    end,
+  })
 end
 
 return M
