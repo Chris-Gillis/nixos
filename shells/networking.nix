@@ -24,5 +24,11 @@ pkgs.mkShell {
 
   shellHook = ''
     echo Entering networking shell...
+    echo
+    echo Avaliable commands:
+    echo "  - dig"
+    echo "  - nslookup"
+    echo "  - nmap"
+    echo
   '';
 }
