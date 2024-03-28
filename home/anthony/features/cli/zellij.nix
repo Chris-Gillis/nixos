@@ -2,7 +2,7 @@
   programs.zellij = {
     enable = true;
     settings = {
-      theme = "everforest-light";
+      theme = "gruvbox-dark";
       themes = {
         everforest-light = {
           bg = "#fff9e8";
