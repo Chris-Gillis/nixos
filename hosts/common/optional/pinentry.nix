@@ -3,7 +3,7 @@
   services.dbus.packages = [ pkgs.gcr ];
   programs.gnupg.agent = {
     enable = true;
-    pinentryFlavor = "curses";
+    pinentryPackage = pkgs.pinentry-curses;
     enableSSHSupport = true;
   };
 }
