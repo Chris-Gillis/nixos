@@ -1,6 +1,8 @@
 { inputs, lib, pkgs, config, outputs, ... }: 
 let
   overlays = {
+    rust-overlay = inputs.rust-overlay.overlays.default;
+    nur = inputs.nur.overlay;
     personal = import ../../../pkgs/overlay.nix;
   };
 in

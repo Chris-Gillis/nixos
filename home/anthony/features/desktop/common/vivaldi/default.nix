@@ -15,10 +15,10 @@
     pkgs.vivaldi-ffmpeg-codecs
   ];
 
-  xdg.mimeApps.defaultApplications = {
-    "text/html" = [ "vivaldi-stable.desktop" ];
-    "text/xml" = [ "vivaldi-stable.desktop" ];
-    "x-scheme-handler/http" = [ "vivaldi-stable.desktop" ];
-    "x-scheme-handler/https" = [ "vivaldi-stable.desktop" ];
-  };
+  # xdg.mimeApps.defaultApplications = {
+  #   "text/html" = [ "vivaldi-stable.desktop" ];
+  #   "text/xml" = [ "vivaldi-stable.desktop" ];
+  #   "x-scheme-handler/http" = [ "vivaldi-stable.desktop" ];
+  #   "x-scheme-handler/https" = [ "vivaldi-stable.desktop" ];
+  # };
 }

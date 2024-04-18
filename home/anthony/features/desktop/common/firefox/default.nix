@@ -1,6 +1,5 @@
 { pkgs, inputs, ... }:
 let
-  addons = inputs.firefox-addons.packages.${pkgs.system};
   bookmarks = import ./bookmarks.nix;
 in
 {
@@ -9,11 +8,30 @@ in
     profiles = {
       primary = {
         bookmarks = bookmarks;
-        extensions = with addons; [
-          ublock-origin
+        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+          beyond-20
           bitwarden
-          # onepassword-password-manager  # TODO: Fix this allowUnfree issue
-          tree-style-tab
+          clearurls
+          decentraleyes
+          enhanced-github
+          gaoptout
+          gruvbox-dark-theme
+          history-cleaner
+          istilldontcareaboutcookies
+          onepassword-password-manager
+          privacy-badger
+          privacy-possum
+          react-devtools
+          reduxdevtools
+          rust-search-extension
+          sidebery
+          sourcegraph
+          sponsorblock
+          terms-of-service-didnt-read
+          tomato-clock
+          ublock-origin
+          wappalyzer
+          webhint
         ];
         search = {
           default = "DuckDuckGo";
@@ -31,10 +49,10 @@ in
     sessionVariables.BROWSER = "firefox";
   };
 
-  # xdg.mimeApps.defaultApplications = {
-  #   "text/html" = [ "firefox.desktop" ];
-  #   "text/xml" = [ "firefox.desktop" ];
-  #   "x-scheme-handler/http" = [ "firefox.desktop" ];
-  #   "x-scheme-handler/https" = [ "firefox.desktop" ];
-  # };
+  xdg.mimeApps.defaultApplications = {
+    "text/html" = [ "firefox.desktop" ];
+    "text/xml" = [ "firefox.desktop" ];
+    "x-scheme-handler/http" = [ "firefox.desktop" ];
+    "x-scheme-handler/https" = [ "firefox.desktop" ];
+  };
 }
