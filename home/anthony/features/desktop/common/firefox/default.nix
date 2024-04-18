@@ -27,6 +27,7 @@ in
           sidebery
           sourcegraph
           sponsorblock
+          tabliss
           terms-of-service-didnt-read
           tomato-clock
           ublock-origin
