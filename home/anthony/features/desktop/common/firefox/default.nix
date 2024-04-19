@@ -31,7 +31,6 @@ in
           terms-of-service-didnt-read
           tomato-clock
           ublock-origin
-          wappalyzer
           webhint
         ];
         search = {
