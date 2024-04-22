@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./bat.nix
+    ./btop.nix
     ./git.nix
     ./misc-tools.nix
     ./ssh.nix
@@ -8,7 +9,6 @@
   ];
 
   home.packages = with pkgs; [
-    btop
     eza
     ripgrep
     fd
