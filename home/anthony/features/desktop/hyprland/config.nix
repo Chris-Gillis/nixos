@@ -148,6 +148,8 @@ in
 
 
   # Window manager controls
+  bind=SUPER,y,overview:toggle
+
   bind=SUPERSHIFT,q,killactive
   bind=SUPERSHIFT,e,exit
 

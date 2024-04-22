@@ -18,8 +18,15 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/hyprland";
+    hyprland = {
+      url = "github:hyprwm/hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprwm-contrib.url = "github:hyprwm/contrib";
+    Hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.nixpkgs.follows = "hyprland";
+    };
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";

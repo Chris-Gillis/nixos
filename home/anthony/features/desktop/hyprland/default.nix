@@ -31,6 +31,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.default;
+    plugins = [
+      inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
+    ];
     extraConfig = let
       theme = import ../../../theme;
     in
