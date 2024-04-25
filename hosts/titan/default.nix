@@ -16,6 +16,12 @@
     ../common/optional/wayland.nix
   ];
 
+  # system.build-settings = {
+  #   enable = true;
+  #   cores = 2;
+  #   max-jobs = 4;
+  # };
+
   networking = {
     hostName = "titan";
     useDHCP = false;

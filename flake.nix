@@ -25,7 +25,7 @@
     hyprwm-contrib.url = "github:hyprwm/contrib";
     Hyprspace = {
       url = "github:KZDKM/Hyprspace";
-      inputs.nixpkgs.follows = "hyprland";
+      inputs.hyprland.follows = "hyprland";
     };
     sops-nix = {
       url = "github:Mic92/sops-nix";
