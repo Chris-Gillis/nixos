@@ -5,8 +5,9 @@ in
 {
   programs.firefox = {
     enable = true;
+    package = pkgs.firefox-devedition;
     profiles = {
-      primary = {
+      dev-edition-default = {
         bookmarks = bookmarks;
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
           beyond-20
