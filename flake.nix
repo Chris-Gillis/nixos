@@ -32,6 +32,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-gaming.url = "github:fufexan/nix-gaming";
+    superfile.url = "github:yorukot/superfile";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, rust-overlay, nix-gaming, ... }@inputs:
