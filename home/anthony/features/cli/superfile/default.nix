@@ -3,8 +3,8 @@
     inputs.superfile.packages.${pkgs.system}.default
   ];
 
-  xdg.configFile = {
-    "superfile/config.toml".source = ./config.toml;
-    "superfile/hotkeys.toml".source = ./hotkeys.toml;
+  xdg.configFile."superfile" = {
+    source = ./config;
+    recursive = true;
   };
 }
