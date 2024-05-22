@@ -4,7 +4,17 @@
   config = ''
     require('Comment').setup()
 
-    vim.keymap.set('n', '<leader>/', function() require("Comment.api").toggle.linewise.current() end)
-    vim.keymap.set('v', '<leader>/', '<ESC><cmd>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
+    local wk = require("which-key")
+    wk.register({
+      ["<leader>/"] = {
+        function()
+          require("Comment.api").toggle.linewise.current()
+        end,
+        "Toggle comment"
+      }
+    })
+    wk.register({
+      ["<leader>/"] = { '<ESC><cmd>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', "Toggle comment" }
+    }, { mode = "v" })
   '';
 }

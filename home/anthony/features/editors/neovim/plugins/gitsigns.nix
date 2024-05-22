@@ -13,7 +13,15 @@
       },
       on_attach = function(bufnr)
         gs = package.loaded.gitsigns
-        vim.keymap.set('n', '<leader>gb', function() gs.blame_line({ full = true }) end, { buffer = bufnr, silent = true })
+        local wk = require("which-key")
+        wk.register({
+          ['<leader>gb'] = {
+            function()
+              gs.blame_line({ full = true })
+            end,
+            "git blame line"
+          }
+	}, { buffer = bufnr, silent = true })
       end,
     })
   '';

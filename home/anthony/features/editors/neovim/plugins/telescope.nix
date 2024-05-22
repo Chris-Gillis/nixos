@@ -54,18 +54,21 @@
       },
     })
 
-    vim.keymap.set("n", "<leader>ff", "<cmd> Telescope find_files <CR>")
-    vim.keymap.set("n", "<leader>fa", "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>")
-    vim.keymap.set("n", "<leader>fw", "<cmd> Telescope live_grep <CR>")
-    vim.keymap.set("n", "<leader>fb", "<cmd> Telescope buffers <CR>")
-    vim.keymap.set("n", "<leader>fh", "<cmd> Telescope help_tags <CR>")
-    vim.keymap.set("n", "<leader>fo", "<cmd> Telescope oldfiles <CR>")
-
-    -- git
-    vim.keymap.set("n", "<leader>cm", "<cmd> Telescope git_commits <CR>")
-    vim.keymap.set("n", "<leader>gt", "<cmd> Telescope git_status <CR>")
-
-    -- pick a hidden term
-    vim.keymap.set("n", "<leader>pt", "<cmd> Telescope terms <CR>")
+    local wk = require("which-key")
+    wk.register({
+      ["<leader>"] = {
+        f = {
+          f = { "<cmd> Telescope find_files <CR>", "Find files" },
+          a = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
+          w = { "<cmd> Telescope live_grep <CR>", "Live grep" },
+          b = { "<cmd> Telescope buffers <CR>", "Find buffers" },
+          h = { "<cmd> Telescope help_tags <CR>", "Help page" },
+          o = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles" },
+          z = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
+        },
+        cm = { "<cmd> Telescope git_commits <CR>", "Git commits" },
+        gt = { "<cmd> Telescope git_status <CR>", "Git status" },
+      }
+    })
   '';
 }

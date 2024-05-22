@@ -10,30 +10,14 @@
       },
     })
 
-    vim.keymap.set({ 'n', 'x', 'o' }, 's', function()
-      require("flash").jump({
-        search = {
-          mode = function(str)
-            return "\\<" .. str
-          end,
-        },
-      })
-    end)
+--    vim.keymap.set({ 'n', 'x', 'o' }, 's', function()
+--      require("flash").jump({
+--        search = {
+--          mode = function(str)
+--            return "\\<" .. str
+--          end,
+--        },
+--      })
+--    end)
   '';
 }
-    # vim.keymap.set(
-    #   'n',
-    #   '<leader>s',
-    #   [[
-    #     function()
-    #       require("flash").jump({
-    #         search = {
-    #           mode = function(str)
-    #             return "\\<" .. str
-    #           end,
-    #         },
-    #       })
-    #     end
-    #   ]],
-    #   {}
-    # )

@@ -1,6 +1,10 @@
 { pkgs, unstable, lib, ... }:
 let
   plugins = import ./plugins { inherit pkgs lib; };
+
+  rubyDeps = pkgs.ruby.withPackages (p: with p; [
+    solargraph
+  ]);
 in
 {
   home.sessionVariables.EDITOR = "nvim";
@@ -10,19 +14,30 @@ in
     package = unstable.neovim-unwrapped;
 
     extraPackages = with pkgs; [
+      gcc
+      typescript
+      silicon
+
       # Language servers
+      nodejs_20
       nodePackages.bash-language-server
       nodePackages.vscode-langservers-extracted
-      nodePackages.eslint
-      nodejs_18
       docker-compose-language-service
-      nodePackages.dockerfile-language-server-nodejs
+      dockerfile-language-server-nodejs
+      emmet-ls
+      nodePackages.eslint
       lua-language-server
       nil
       nodePackages.prettier
+      rubyDeps
       rust-analyzer
-      rubyPackages.solargraph
+      (rust-bin.selectLatestNightlyWith (toolchain: toolchain.default))
+      tailwindcss-language-server
       nodePackages.typescript-language-server
+      
+      # For Rust debugging
+      vscode-extensions.vadimcn.vscode-lldb.adapter
+      graphviz
     ];
 
     extraLuaPackages = luaPkgs: [];

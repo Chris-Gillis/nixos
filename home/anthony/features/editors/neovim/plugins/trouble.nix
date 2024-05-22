@@ -4,8 +4,13 @@
   config = ''
     require("trouble").setup()
 
-    vim.keymap.set('n', '<leader>xx', '<cmd>TroubleToggle<cr>', { noremap = true, silent = true })
-    vim.keymap.set('n', '<leader>xw', '<cmd>TroubleToggle workspace_diagnostics<cr>', { noremap = true, silent = true })
-    vim.keymap.set('n', '<leader>xd', '<cmd>TroubleToggle document_diagnostics<cr>', { noremap = true, silent = true })
+    local wk = require("which-key")
+    wk.register({
+      ["<leader>x"] = {
+        x = { "<cmd>TroubleToggle<cr>", "Toggle Trouble diagnostics" },
+        w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Trouble workspace diagnostics" },
+        d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Trouble document diagnostics" },
+      }
+    })
   '';
 }

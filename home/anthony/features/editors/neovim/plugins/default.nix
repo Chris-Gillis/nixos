@@ -3,24 +3,28 @@ let
   themes = import ./themes { inherit pkgs lib; };
 in{
   # Select a theme from the files available in ./themes
-  theme = themes.everforest;
+  theme = themes.gruvbox;
 
   # Dependencies
   plenary = import ./plenary.nix { inherit pkgs lib; };
   nui = import ./nui.nix { inherit pkgs lib; };
+  which-key = import ./which-key.nix { inherit pkgs lib; };
+  nvim-dap = import ./nvim-dap.nix { inherit pkgs lib; };
 
   # File Tree
-  neo-tree = import ./neo-tree.nix { inherit pkgs lib; };
+  nvim-tree = import ./nvim-tree.nix { inherit pkgs lib; };
   nvim-web-devicons = import ./nvim-web-devicons.nix { inherit pkgs lib; };
 
   # AI Suggestions
   # codeium = import ./codeium.nix { inherit pkgs lib; };
-  copilot = import ./copilot.nix { inherit pkgs lib; };
+  # copilot = import ./copilot.nix { inherit pkgs lib; };
 
   # Syntax Highlighting / Language Support
   treesitter = import ./nvim-treesitter.nix { inherit pkgs lib; };
   lsp = import ./lsp.nix { inherit pkgs lib; };
-  rust-tools = import ./rust-tools.nix { inherit pkgs lib; };
+  lspcontainers = import ./lspcontainers.nix { inherit pkgs lib; };
+  rustaceanvim = import ./rustaceanvim.nix { inherit pkgs lib; };
+  vim-mustache-handlebars = import ./vim-mustache-handlebars.nix { inherit pkgs lib; };
 
   # Code Completion
   nvim-cmp = import ./nvim-cmp.nix { inherit pkgs lib; };
@@ -44,4 +48,5 @@ in{
   spelunker = import ./spelunker.nix { inherit pkgs lib; };
   telescope = import ./telescope.nix { inherit pkgs lib; };
   trouble = import ./trouble.nix { inherit pkgs lib; };
+  nvim-silicon = import ./nvim-silicon.nix { inherit pkgs lib; };
 }
