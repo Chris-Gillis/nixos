@@ -8,6 +8,7 @@ in
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
+    history.ignoreAllDups = true;
     initExtra = ''
       ${lib.strings.fileContents ./env.zsh}
       ${lib.strings.fileContents ./aliases.zsh}
@@ -33,6 +34,14 @@ in
         name = "powerlevel10k-config";
         src = lib.cleanSource ./p10k-config;
         file = "p10k.zsh";
+      }
+      {
+        name = "zsh-completions";
+        src = pkgs.zsh-completions;
+      }
+      {
+        name = "nix-zsh-completions";
+        src = pkgs.nix-zsh-completions;
       }
     ];
   };

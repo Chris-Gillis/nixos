@@ -15,5 +15,6 @@
     fd
     jq
     yarn
+    zoxide
   ];
 }

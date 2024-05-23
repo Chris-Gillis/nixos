@@ -1,3 +1,7 @@
+eval "$(zoxide init --cmd cd zsh)"
+
+autoload -U compinit && compinit
+
 # Start a zellij session if it hasn't been started yet
 export ZELLIJ_AUTO_ATTACH=true
 if [[ -z "$ZELLIJ" ]]; then
