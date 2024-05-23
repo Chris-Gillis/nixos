@@ -25,6 +25,7 @@ in{
   lspcontainers = import ./lspcontainers.nix { inherit pkgs lib; };
   rustaceanvim = import ./rustaceanvim.nix { inherit pkgs lib; };
   vim-mustache-handlebars = import ./vim-mustache-handlebars.nix { inherit pkgs lib; };
+  vim-jinja2-syntax = import ./vim-jinja2-syntax.nix { inherit pkgs lib; };
 
   # Code Completion
   nvim-cmp = import ./nvim-cmp.nix { inherit pkgs lib; };

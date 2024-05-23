@@ -11,19 +11,12 @@ let
   };
 in
 {
-  plugin = (pluginFromGit "mrcjkb/rustaceanvim" "master" "66466d4fe0b8988ba9e2932d3c41782c2efb683b");
+  plugin = (pluginFromGit "Glench/Vim-Jinja2-Syntax" "master" "2c17843b074b06a835f88587e1023ceff7e2c7d1");
   type = "lua";
   config = ''
-    vim.g.rustaceanvim = {
-      server = {
-        default_settings = {
-          ["rust-analyzer"] = {
-            cargo = {
-              targetDir = "./.rust-analyzer"
-            }
-          }
-        }
-      }
-    }
+    vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+      pattern = { "*.tera" },
+      command = "set ft=jinja",
+    })
   '';
 }
