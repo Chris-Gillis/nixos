@@ -14,14 +14,14 @@ in
   plugin = (pluginFromGit "michaelrommel/nvim-silicon" "main" "ab664633e5090809da7470288404fe5b8735a8c8");
   type = "lua";
   config = ''
-    -- require("silicon").setup({
-    --   font = "ComicShannsMono Nerd Font=34",
-    --   to_clipboard = true,
-    -- })
+    require("silicon").setup({
+      font = "ComicShannsMono Nerd Font=34",
+      to_clipboard = true,
+    })
 
-    -- local wk = require("which-key")
-    -- wk.register({
-    --  ["<leader>ss"] = { ":Silicon <CR>", "Screenshot selection (silicon)" }
-    -- }, { mode = "x" })
+    local wk = require("which-key")
+    wk.register({
+      ["<leader>ss"] = { ":Silicon <CR>", "Screenshot selection (silicon)" }
+    }, { mode = "x" })
   '';
 }
