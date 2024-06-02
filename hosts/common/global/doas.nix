@@ -4,7 +4,7 @@
     doas = {
       enable = true;
       extraRules = [{
-        users = [ "anthony" ];
+        users = [ "christopher" ];
         keepEnv = true;
         noPass = true;
       }];

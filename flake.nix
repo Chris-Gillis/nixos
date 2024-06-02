@@ -14,28 +14,27 @@
       url = "github:kmonad/kmonad?dir=nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprland = {
-      url = "github:hyprwm/hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprwm-contrib.url = "github:hyprwm/contrib";
-    Hyprspace = {
-      url = "github:KZDKM/Hyprspace";
-      inputs.hyprland.follows = "hyprland";
-    };
+    # rust-overlay = {
+    #   url = "github:oxalica/rust-overlay";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # hyprland = {
+    #   url = "github:hyprwm/hyprland";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # hyprwm-contrib.url = "github:hyprwm/contrib";
+    # Hyprspace = {
+    #   url = "github:KZDKM/Hyprspace";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-gaming.url = "github:fufexan/nix-gaming";
     superfile.url = "github:yorukot/superfile";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, rust-overlay, nix-gaming, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
   let
     inherit (self) outputs;
 
@@ -47,7 +46,6 @@
     unstable = import nixpkgs-unstable { inherit system; };
 
     overlays = {
-      rust-overlay = rust-overlay.overlays.default;
       nur = inputs.nur.overlay;
       personal = import pkgs/overlay.nix;
     };
@@ -79,16 +77,7 @@
     packages = forEachPkgs (pkgs: (import ./pkgs { inherit pkgs; }));
 
     nixosConfigurations = {
-      tethys = mkNixos [ ./hosts/tethys ];
-      titan = mkNixos [ ./hosts/titan ];
-      gaia = mkNixos [ ./hosts/gaia ];
-
-      # Devices
-      lepotato = mkNixosImage [ ./devices/lepotato.nix ];
-    };
-
-    images = {
-      lepotato = nixosConfigurations.lepotato.config.system.build.sdImage;
+      mercury = mkNixos [ ./hosts/mercury ];
     };
 
     devShells."${system}" = import ./shells { inherit pkgs; };

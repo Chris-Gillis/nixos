@@ -9,16 +9,16 @@
     ./obsidian.nix
     ./pavucontrol.nix
     ./slack.nix
-    ./spotify.nix
+    # ./spotify.nix
     ./vivaldi
   ];
 
   xdg.mimeApps.enable = true;
 
   home.packages = with pkgs; [
-    beekeeper-studio
+    # beekeeper-studio
     # postman
-    remmina
+    # remmina
     playerctl
     gimp
     inkscape
@@ -26,7 +26,7 @@
     libsForQt5.dolphin
     brightnessctl
     logseq
-    thunderbird
+    # thunderbird
     libation
     cozy
   ];

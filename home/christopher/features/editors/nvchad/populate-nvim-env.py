@@ -66,7 +66,7 @@ if __name__ == "__main__":
         required=False,
         help="Output Path",
         type=str,
-        default="{}/.config/nvim/lua/anthony".format(home_directory),
+        default="{}/.config/nvim/lua/christopher".format(home_directory),
     )
     args = parser.parse_args()
     main(args.output)

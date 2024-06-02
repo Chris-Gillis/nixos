@@ -1,7 +1,6 @@
 { inputs, lib, pkgs, config, outputs, ... }: 
 let
   overlays = {
-    rust-overlay = inputs.rust-overlay.overlays.default;
     nur = inputs.nur.overlay;
     personal = import ../../../pkgs/overlay.nix;
   };
@@ -34,9 +33,9 @@ in
   };
 
   home = {
-    username = lib.mkDefault "anthony";
+    username = lib.mkDefault "christopher";
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
-    stateVersion = "23.05";
+    stateVersion = "23.11";
     sessionPath = [ "$HOME/.local/bin" ];
   };
 }
